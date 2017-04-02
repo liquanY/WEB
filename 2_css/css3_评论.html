@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>评论</title>
+    <meta charset="UTF-8">
+    <style>
+        #comment{
+            width: 90%;
+            border: 1px solid #D0E4C2;
+            background-color: #FCFFFA;
+            padding: 10px 15px 5px;
+        }
+        #pages{
+            width: 90%;
+            margin-top: 10px;
+        }
+        #pages a{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-left: 5px;
+        }
+        #pages a.current{
+            border: 0;
+        }
+        div.topic{
+            border-bottom: 1px solid #D0E4C2;
+            margin-bottom: 10px;
+        }
+        div.star{
+            width: 76px;
+            height: 18px;
+            background: url("c9.png") no-repeat -108px -238px;
+        }
+        p b{
+            background-color: #FDEDD2;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+        p.btns input{
+            border: 1px solid #d5d5d5;
+            background-image: linear-gradient(to bottom,#f9f9f9,#ccc);
+            width: 80px;
+            border-radius: 3px;
+        }
+        #comment{
+            font: 12px "microsoft yahei";
+            color: #666;
+        }
+        #comment p b{
+            font-weight: normal;
+            color: #333;
+        }
+        #comment p{
+            color: #9C9A9C;
+        }
+        #comment span{
+            color: #666;
+        }
+        p.btns{
+            text-align: right;
+        }
+        p.btns input{
+            height: 40px;
+            line-height: 40px;
+        }
+        #pages{
+            text-align: right;
+            font: 12px "microsoft yahei";
+        }
+        #pages a{
+            color: #005AA0;
+            text-decoration: none;
+        }
+        #pages a.current{
+            color: #FF6600;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div id="comment">
+        <div class="topic">
+            <div class="star"></div>
+        </div>
+        <p>
+            标&nbsp;&nbsp;&nbsp;&nbsp;签:
+            <b>比洗衣粉好</b>
+            <b>去污能力强</b>
+        </p>
+        <p>
+            心&nbsp;&nbsp;&nbsp;&nbsp;得:
+            <span>买了几次了,挺好用得,洗的衣服很干净,以后就它了!</span>
+        </p>
+        <p>
+            购买日期:
+            <span>2014-12-01</span>
+        </p>
+        <p class="btns">
+            <input value="有用(3)" type="button">
+            <input value="回复(3)" type="button">
+        </p>
+    </div>
+    <div id="pages">
+        <a class="current">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>淘宝登录</title>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            font-size: 12px;
+            color: #404040;
+        }
+        header,section{
+            width: 1190px;
+            margin: 10px auto;
+        }
+        header{
+            padding-top: 30px;
+        }
+        section{
+            background-image: url("c10.JPG");
+            background-repeat: no-repeat;
+            background-position: 20% center;
+        }
+        #login_box{
+            width: 295px;
+            margin: 60px 0 48px 720px;
+            border: 2px solid #dedede;
+            border-top-color: #ff4200;
+            background: url("c11.png") no-repeat right top;
+            padding: 10px 10px 30px 30px;
+        }
+        div.info_username,div.info_pwd{
+            margin-top: 20px;
+            color: #666;
+            width: 233px;
+            height: 23px;
+            padding-left: 20px;
+        }
+        div.info_username{
+            background: #ccc url("c13.png") no-repeat 3px center;
+        }
+        div.info_pwd{
+            background: #ccc url("c14.png") no-repeat 3px center;
+        }
+        div.info_pwd input,div.info_username input{
+            width: 233px;
+            height: 19px;
+            border: 1px solid #dedede;
+        }
+        input.btn_login{
+            width: 255px;
+            height: 38px;
+            border: 0;
+            color: #fff;
+            background-color: #FF4700;
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        a.weibo{
+            padding: 5px;
+            padding-left: 20px;
+            background: url("c15.png") no-repeat 0 -213px;
+            color: #6d6d6d;
+        }
+        a.zhifu{
+            padding: 5px;
+            padding-left: 20px;
+            background: url("c15.png") no-repeat 0 -143px;
+            color: #6d6d6d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="c12.png">
+    </header>
+    <section>
+        <div id="login_box">
+            <h1>登录</h1>
+            <div class="info_username">
+                <input>
+            </div>
+            <div class="info_pwd">
+                <input type="password">
+            </div>
+            <p>
+                <input type="checkbox" id="chkSafe"><label for="chkSafe">安全控件登录</label>
+                <a href="#">忘记登录密码?</a>
+            </p>
+            <input type="button" class="btn_login" value="登录">
+            <div class="other_login">
+                <a href="#" class="weibo">微博登录</a>
+                <a href="#" class="zhifu">支付宝登录</a>
+                <a href="#" class="register">免费注册</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

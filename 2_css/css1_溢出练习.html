@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>溢出练习</title>
+    <meta charset="UTF-8">
+    <style>
+        div.image_list{
+            border: 1px solid black;
+            width: 500px;
+            height: 150px;
+            overflow-x: auto;
+        }
+        div.image_list p{
+            width: 800px;
+            height: 100px;
+        }
+        div.image_list p img{
+            width: 100px;
+        }
+        div.image_list>p>img{
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        div.image_list>p>img:hover{
+            border: 2px solid #f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="image_list">
+        <p>
+            <img src="c1.jpg">
+            <img src="c2.jpg">
+            <img src="c3.jpg">
+            <img src="c4.jpg">
+            <img src="c5.jpg">
+            <img src="c6.jpg">
+            <img src="c7.jpg">
+        </p>
+    </div>
+</body>
+</html>

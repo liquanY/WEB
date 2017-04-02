@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>论坛</title>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            font: 12px "microsoft yahei",arial,Verdana;
+            color: #666;
+        }
+        #discuss,div.mt,#discuss_content,#discuss_datas{
+            width: 990px;
+        }
+        div.mt{
+            height: 30px;
+            background-color: #F7F7F7;
+            border: 1px solid #ddd;
+            border-top: 2px solid #999;
+        }
+        #discuss_content{
+            border-bottom: 1px solid #ddd;
+            overflow: hidden;
+        }
+        #discuss_datas{
+            border-spacing: 2px;
+        }
+        #discuss_datas td{
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            padding: 6px 0px;
+        }
+        #discuss_datas td.col_left{
+            text-align: left;
+        }
+        #discuss_datas tr.header td{
+            border-bottom: 1px solid #ddd;
+            padding: 6px 0px;
+            font-weight: bold;
+        }
+        #discuss_datas td.col1{
+            text-align: left;
+            width: 620px;
+        }
+        #discuss_datas td.col2{
+            width: 70px;
+        }
+        #discuss_datas td.col3{
+            width: 80px;
+        }
+        #discuss a{
+            color: #005AA0;
+            text-decoration: none;
+        }
+        #discuss a:hover{
+            text-decoration: underline;
+        }
+        i.topic{
+            padding-left: 20px;
+            padding-bottom: 4px;
+            background-image: url("c16.png");
+            background-repeat: no-repeat;
+        }
+        i.shai{
+            background-position: -110px -220px;
+        }
+        i.lun{
+            background-position: -152px -220px;
+        }
+        div.mt{
+            font: 14px "microsoft yahei";
+        }
+        .mt a{
+            width: 96px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+        }
+        #discuss .mt a:hover{
+            color: #e4393c;
+            text-decoration: none;
+        }
+        #discuss .mt a.current{
+            background-color: #fff;
+            color: #e4393c;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-top: 2px solid #e4393c;
+            margin-top: -4px;
+            height: 33px;
+            line-height: 33px;
+        }
+        .extra .newdiscuss{
+            float: left;
+        }
+        .extra .totaldiscuss{
+            float: right;
+        }
+        .extra{
+            margin: 6px 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="discuss">
+        <div class="mt">
+            <a href="#">网友讨论圈</a>
+            <a href="#" class="current">晒单贴</a>
+            <a href="#">讨论贴</a>
+            <a href="#">问答贴</a>
+            <a href="#">圈子贴</a>
+        </div>
+        <div id="discuss_content">
+            <table id="discuss_datas">
+                <tr class="header">
+                    <td class="col1">主题</td>
+                    <td class="col2">回复/浏览</td>
+                    <td class="col3">作者</td>
+                    <td class="col4">时间</td>
+                </tr>
+                <tbody>
+                <tr>
+                    <td class="col_left">
+                        <i class="topic shai"></i>
+                        <a href="#">好大一瓶,不错</a>
+                    </td>
+                    <td>0/0</td>
+                    <td>
+                        <a href="#">2011年冬天</a>
+                    </td>
+                    <td>
+                        2011-11-11 11:11:11
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col_left">
+                        <i class="topic lun"></i>
+                        <a href="#">好大一瓶,不错</a>
+                    </td>
+                    <td>0/0</td>
+                    <td>
+                        <a href="#">2011年冬天</a>
+                    </td>
+                    <td>
+                        2011-11-11 11:11:11
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="extra">
+                <div class="newdiscuss">
+                    <span>有问题要与其他用户讨论?</span>
+                    <a href="#">[发表帖子]</a>
+                </div>
+                <div class="totaldiscuss">
+                    <span>共900个话题</span>
+                    <a href="#">浏览全部话题&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

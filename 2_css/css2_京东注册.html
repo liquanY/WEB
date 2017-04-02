@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>京东注册</title>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            background-color: #f2f2f2;
+            color: #999;
+        }
+        table{
+            border: 1px solid #ddd;
+            background-color: #fff;
+            width: 95%;
+        }
+        input.height30{
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        input.width50{
+            width: 50px;
+        }
+        input#vCode{
+            height: 28px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+        }
+        input#regist{
+            width: 150px;
+            height: 30px;
+            color: #fff;
+            background-color: #e43e42;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" class="height30"></td>
+            <td>4-12位字符,支持汉字 字母 数字组合</td>
+            <td rowspan="7">
+                <img src="c8.jpg">
+            </td>
+        </tr>
+        <tr>
+            <td>请设置密码:</td>
+            <td><input type="text" class="height30"></td>
+            <td>6-20位字符,支持汉字 字母 数字组合</td>
+        </tr>
+        <tr>
+            <td>请确认密码:</td>
+            <td><input type="text" class="height30"></td>
+            <td>请再次输入密码</td>
+        </tr>
+        <tr>
+            <td>验证手机:</td>
+            <td><input type="text" class="height30"></td>
+            <td>完成验证后,可以使用手机找回密码</td>
+        </tr>
+        <tr>
+            <td>短信验证码:</td>
+            <td>
+                <input type="text" class="height30 width50">
+                <input id="vCode" type="button" value="获取短信验证码"></td>
+            <td>请输入验证码</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="checkbox">我已阅读并同意<a href="#">&lt;&lt;京东用户注册协议&gt;&gt;</a></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="regist" type="button" value="立即注册"></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
