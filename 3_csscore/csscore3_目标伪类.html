@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>目标伪类</title>
+    <meta charset="UTF-8">
+    <style>
+        div.empty{
+            height: 800px;
+        }
+        a:target{
+            background: red;
+        }
+        div:target{
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="#China">跳转至中国</a></p>
+    <p><a href="#America">跳转至美国</a></p>
+    <p><a href="#Japan">跳转至日本</a></p>
+    <div class="empty"></div>
+    <a name="China">中国:地大物博!</a>
+    <div class="empty"></div>
+    <a name="America">美国:到处欺负人!</a>
+    <div class="empty"></div>
+    <div id="Japan">日本:倭瓜国!</div>
+    <div class="empty"></div>
+</body>
+</html>

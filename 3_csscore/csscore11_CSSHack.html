@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Hack</title>
+    <meta charset="UTF-8">
+    <style>
+        #d1{
+            width: 300px;
+            height: 300px;
+            background: red;
+            /*IE7 在IE7中显示绿色背景*/
+            *background: green;
+            /*IE6 在IE6中显示黑色背景*/
+            _background: black;
+            /*IE8 在IE8中显示黄色背景*/
+            background: yellow\0;
+        }
+        /*IE6 中对div的样式定义*/
+        *div{
+
+        }
+        /*IE7 中对div的样式定义*/
+        *+div{
+
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <!--[if IE]>
+    这段文本旨在ie中显示
+    <![endif]-->
+    所有浏览器都支持的文本!
+</body>
+</html>

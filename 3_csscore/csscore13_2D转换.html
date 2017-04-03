@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D转换</title>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 200px;
+            top: 100px;
+        }
+        #d1{
+            border: 1px dotted black;
+        }
+        #d2{
+            border: 1px solid black;
+            background: rgba(0,0,255,0.3);
+        }
+        #d2:hover{
+            /*位移*/
+            /*-webkit-transform: translate(150px,150px);*/
+            /*缩放*/
+            /*-webkit-transform: scale(2);*/
+            /*旋转*/
+            /*-webkit-transform: rotate(45deg);*/
+            /*先变换原点 再旋转*/
+            /*-webkit-transform-origin: left top;*/
+            /*-webkit-transform: rotate(45deg);*/
+            /*倾斜*/
+            /*-webkit-transform: skewY(30deg);*/
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">原始位置</div>
+    <div id="d2">待转换元素</div>
+</body>
+</html>

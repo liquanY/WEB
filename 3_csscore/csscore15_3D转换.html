@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D转换</title>
+    <meta charset="UTF-8">
+    <style>
+        #father{
+            -webkit-perspective: 100px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: #ddd;
+            left: 50px;
+            top: 50px;
+            position: absolute;
+            /*x轴旋转*/
+            /*-webkit-transform: rotateX(45deg);*/
+            /*y轴旋转*/
+            /*-webkit-transform: rotateY(45deg);*/
+            /*z轴旋转*/
+            /*-webkit-transform: rotateZ(45deg);*/
+        }
+    </style>
+</head>
+<body>
+    <div id="father">
+        <div id="div1">Rotate Div</div>
+    </div>
+</body>
+</html>

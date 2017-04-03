@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>兄弟选择器</title>
+    <meta charset="UTF-8">
+    <style>
+        p{
+            border: 1px solid black;
+        }
+        div.s1+p{
+            color: red;
+        }
+        div.s1~p{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <p>段落1</p>
+    <div class="s1">指定元素</div>
+    <p>段落3</p>
+    <p>段落4</p>
+</body>
+</html>

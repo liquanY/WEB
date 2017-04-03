@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>计数器</title>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            counter-reset: chp 0;
+        }
+        p{
+            counter-increment: chp 1;
+        }
+        div{
+            counter-increment: chp 5;
+        }
+        p:before{
+            content: "第"counter(chp)"章";
+            padding-right: 10px;
+        }
+        div:before{
+            content: "第"counter(chp)"章";
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>李权出生</p>
+    <p>李权成长</p>
+    <p>李权长大</p>
+    <p>李权娶媳妇</p>
+    <p>李权生孩子</p>
+    <div>小权权出生</div>
+    <div>小权权成长</div>
+    <div>小权权长大</div>
+</body>
+</html>

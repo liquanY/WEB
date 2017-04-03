@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>转换加过渡</title>
+    <meta charset="UTF-8">
+    <style>
+        #d1{
+            border-top: 5px solid #000;
+            position: absolute;
+            top: 100px;
+            left: 300px;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        #d1:hover{
+            /*过渡*/
+            transition: -webkit-transform 2s linear 0s;
+            -webkit-transform: rotate(720deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

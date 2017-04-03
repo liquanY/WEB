@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>过渡函数练习</title>
+    <meta charset="UTF-8">
+    <style>
+        img:hover{
+            transition: -webkit-transform 1s linear 0s;
+            -webkit-transform: rotate(720deg);
+        }
+        div{
+            border: 1px solid black;
+            background: #ddd;
+            width: 200px;
+            height: 50px;
+        }
+        #d1{
+            transition: width 5s ease 0s;
+        }
+        #d2{
+            transition: width 5s linear 0s;
+        }
+        #d3{
+            transition: width 5s ease-in 0s;
+        }
+        #d4{
+            transition: width 5s ease-out 0s;
+        }
+        #d5{
+            transition: width 5s ease-in-out 0s;
+        }
+        div:hover{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <img src="cc7.jpg">
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+</body>
+</html>

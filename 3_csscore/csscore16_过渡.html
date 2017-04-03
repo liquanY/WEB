@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>过渡</title>
+    <meta charset="UTF-8">
+    <style>
+        #d1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /*过渡*/
+            transition-property: background,width;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            transition-delay: 1s;
+        }
+        #d1:hover{
+            background: blue;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

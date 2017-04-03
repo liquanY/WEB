@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>目标伪类练习</title>
+    <meta charset="UTF-8">
+    <style>
+        #link a{
+            display: inline-block;
+            width: 80px;
+            background: #ddd;
+            border: 1px solid #333;
+            margin-right: 10px;
+        }
+        #showImg img{
+            display: none;
+        }
+        #showImg{
+            width: 400px;
+            height: 350px;
+            border: 1px solid #ddd;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #showImg img:target{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="link">
+        <a href="#img1">img1</a>
+        <a href="#img2">img2</a>
+        <a href="#img3">img3</a>
+        <a href="#img4">img4</a>
+    </div>
+    <div id="showImg">
+        <img id="img1" src="cc2.jpg">
+        <img id="img2" src="cc3.jpg">
+        <img id="img3" src="cc4.jpg">
+        <img id="img4" src="cc5.jpg">
+    </div>
+</body>
+</html>

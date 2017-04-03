@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>属性选择器</title>
+    <meta charset="UTF-8">
+    <style>
+        .important{font-weight: bold;}
+        .warning{color: red;}
+        p[id]{
+            border: 1px solid red;
+        }
+        p[id="summary"]{
+            background: pink;
+        }
+        p[class~=warning]{
+            font-size: 36px;
+            color: red;
+            font-weight: bold;
+        }
+        p[language*="en-us"]{
+            background: gray;
+        }
+        p[title^=fi]{
+            font-size: 2em;
+        }
+        p[title*=on]{
+            font-size: 3em;
+        }
+        p[title$=rd]{
+            font-size: 4em;
+        }
+    </style>
+</head>
+<body>
+    <p id="intro">带有id属性的段落</p>
+    <p id="summary">id属性的值为summary的段落</p>
+    <p class="important warning">class属性的值为单词列表 且其中有warning的段落</p>
+    <p language="en-us">语言为en-us的段落</p>
+    <p title="first">title属性的值为first的段落</p>
+    <p title="second">title属性的值为second的段落</p>
+    <p title="third">title属性的值为third的段落</p>
+</body>
+</html>

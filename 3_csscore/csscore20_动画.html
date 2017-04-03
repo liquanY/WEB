@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>动画</title>
+    <meta charset="UTF-8">
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /*调用changeDiv的动画*/
+            -webkit-animation: changeDiv 5s linear 0s infinite alternate;
+        }
+        /*声明动画*/
+        @-webkit-keyframes changeDiv{
+            from{
+                background: red;
+            }
+            25%{
+                -webkit-transform: translateX(50px);
+                background: green;
+            }
+            50%{
+                -webkit-transform: translate(50px,50px);
+                background: yellow;
+            }
+            75%{
+                -webkit-transform: translate(0px,50px);
+                background: pink;
+            }
+            to{
+                -webkit-transform: translate(0px 0px);
+                border-radius: 50%;
+                background: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>
