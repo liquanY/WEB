@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>猜数字改进版</title>
+    <meta charset="UTF-8">
+    <script>
+        var n = parseInt(Math.random()*(9-0+1)+0);
+        var input = "";
+        while(true){
+            input = prompt("你猜");
+            if(input == "exit"){
+                alert("放弃了");
+                break;
+            }else if(input<="0" && input>="9"){
+                alert("你玩儿我?!");
+            }else if(input > n){
+                alert("大了");
+            }else if(input < n){
+                alert("小了");
+            }else if(input == n){
+                alert("猜对了");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>等腰三角</title>
+    <meta charset="UTF-8">
+    <script>
+        var l = parseInt(prompt("输入行数"));
+        for(var r=1; r<=l; r++){
+            for(var i=0,str=""; i<l+r-1; i++){
+                str+=(i<l-r)?" ":"*";
+            }
+            console.log(str);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

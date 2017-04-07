@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>编码和解码</title>
+    <meta charset="UTF-8">
+    <script>
+        //编码
+        var url = "http:www.baidu.com/s?word=";
+        var kword = encodeURI(prompt("百度一下:"));
+        alert("向服务器发送:"+url+kword);
+
+        //解码
+        var response = "%E6%9D%8E%E6%9D%83";
+        alert("从服务器收到："+decodeURI(response));
+
+        //编码
+        var url = "http://www.baidu.com/s?word=";
+        var kword = encodeURIComponent(prompt("百度一下："));
+        alert("向服务器发送："+url+kword);
+
+        //解码
+        var response = "%E6%9D%8E%E6%9D%83";
+        alert("从服务器收到："+decodeURIComponent(response));
+
+    </script>
+</head>
+<body>
+</body>
+</html>

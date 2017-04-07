@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>兔子的问题</title>
+    <meta charset="UTF-8">
+    <script>
+        //每对儿兔子 第三个月 下一对儿新兔子 开始时只有一对儿
+        var m1 = 1;
+        var m2 = 1;
+        var month = prompt("输入月份:");
+        for(var m=3; m<=month; m++){
+            m1+=m2;
+            m1+=m2; m2=m1-m2; m1-=m2;
+        }
+        console.log("第"+month+"月:"+m2*2+"只兔子");
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>猜数字</title>
+    <meta charset="UTF-8">
+    <script>
+        var n = parseInt(Math.random()*(9-0+1)+0);
+        var input = "";
+        while(input!="exit" && input!=n){
+            input = prompt("你猜");
+            if(input=="exit" || (input>="0" && input<="9")){
+                console.log(input=="exit"?"放弃了":
+                        input>n?"大了":
+                                input<n?"小了":
+                                        "猜对了");
+            }else{
+                console.log("你玩儿我?!");
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

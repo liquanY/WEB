@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>求最小公倍数</title>
+    <meta charset="UTF-8">
+    <script>
+        var a = parseInt(prompt("输入第一个数"));
+        var b = parseInt(prompt("输入第二个数"));
+        a<b && (a+=b, b=a-b, a-=b);
+        var ji = a*b;
+        var r = 0;
+        while(b!=0){
+            r=a%b;
+            a=b;
+            b=r;
+        }
+        console.log(ji/a);
+    </script>
+</head>
+<body>
+</body>
+</html>

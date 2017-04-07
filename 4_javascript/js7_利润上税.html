@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>利润上税</title>
+    <meta charset="UTF-8">
+    <script>
+        var sales = prompt("输入利润");
+        var bonus = 0;//税
+        sales>1000000&&(bonus+=(sales-1000000)*0.01,sales=1000000);
+        sales>600000&&(bonus+=(sales-600000)*0.015,sales=600000);
+        sales>400000&&(bonus+=(sales-400000)*0.03,sales=400000);
+        sales>200000&&(bonus+=(sales-200000)*0.05,sales=200000);
+        sales>100000&&(bonus+=(sales-100000)*0.075,sales=100000);
+        sales>0&&(bonus+=sales*0.1);
+        console.log(bonus);
+    </script>
+</head>
+<body>
+</body>
+</html>

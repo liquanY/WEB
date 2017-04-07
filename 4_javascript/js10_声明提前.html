@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>声明提前</title>
+    <meta charset="UTF-8">
+    <script>
+        function fun(){
+            console.log(1);
+        }
+        fun();//2
+        function fun(){
+            console.log(2);
+        }
+        fun();//2
+        var fun = 100;
+        fun();//报错
+    </script>
+</head>
+<body>
+</body>
+</html>

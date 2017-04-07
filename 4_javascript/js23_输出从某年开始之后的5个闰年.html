@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>输出从某年开始之后的5个闰年</title>
+    <meta charset="UTF-8">
+    <script>
+        var y = parseInt(prompt("输入年份:"));
+        for(var n=0; n<5;(n>0?y+=4:y++)){
+            if((y%4==0 && y%100!=0) || y%400==0){
+                console.log(y);
+                n++;
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

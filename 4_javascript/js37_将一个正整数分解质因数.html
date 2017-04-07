@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>将一个正整数分解质因数</title>
+    <meta charset="UTF-8">
+    <script>
+        var n = parseInt(prompt("输入一个数"));
+        var str = [n+"="];
+        for(var i=2; i<n; i++){
+            while(n%i == 0){
+                n/=i;
+                str[str.length]=i+"x";
+            }
+        }
+        str[str.length]=i;
+        console.log(str.join(""));
+        //这个demo只为正整数为12的考虑 没有考虑正整数为4的情况
+    </script>
+</head>
+<body>
+</body>
+</html>

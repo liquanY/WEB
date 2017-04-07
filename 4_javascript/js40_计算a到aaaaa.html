@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>计算a到aaaaa</title>
+    <meta charset="UTF-8">
+    <script>
+        //a+aa+aaa+...+aaaaa
+        var a = parseInt(prompt("输入一个1-9的数字"));
+        var n = parseInt(prompt("输入累加个数"));
+        for(var arr=[],sum=0; arr.length<n;){
+            arr[arr.length] = a;
+            sum += parseInt(arr.join(""));
+        }
+        console.log(sum);
+    </script>
+</head>
+<body>
+</body>
+</html>

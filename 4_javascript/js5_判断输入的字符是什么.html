@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>判断输入的字符是什么</title>
+    <meta charset="UTF-8">
+    <script>
+        var input = prompt("请输入一个字符：");
+        console.log(input>="0" && input<="9"?"数字":
+                input>="\u4e00" && input<="\u9fa5"?"汉字":
+                        (input>="A" && input <="Z")||(input>="a" && input<="z")?"字母":
+                                "其他字符");
+    </script>
+</head>
+<body>
+</body>
+</html>

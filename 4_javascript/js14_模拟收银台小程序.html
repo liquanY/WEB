@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>模拟收银台小程序</title>
+    <meta charset="UTF-8">
+    <script>
+        var price = parseFloat(prompt("输入单价"));
+        var count = parseFloat(prompt("输入数量"));
+        var money = parseFloat(prompt("输入收款金额"));
+        var total = price*count;
+        total>=500&&(total*=0.8);
+        if(money>=total){
+            var change = money-total;
+            console.log("应收:"+total+";找零："+change);
+        }else{
+            var change = total-money;
+            console.log("应收:"+total+";还差："+change)
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

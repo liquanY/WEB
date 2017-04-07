@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>函数实现indexOf功能</title>
+    <meta charset="UTF-8">
+    <script>
+        //定义一个函数 实现indexOf功能
+        function indexOf(arr,elem){
+            for(var i=0; i<arr.length; i++){
+                if(arr[i]==elem){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        var emps = ["eric","scott","tom","jerry","rose"];
+        console.log(indexOf(emps,prompt("请输入要查找的姓名")));
+    </script>
+</head>
+<body>
+</body>
+</html>

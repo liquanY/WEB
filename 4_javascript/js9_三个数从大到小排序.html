@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>三个数从大到小排序</title>
+    <meta charset="UTF-8">
+    <script>
+        var a = parseInt(prompt("输入第一个值"));
+        var b = parseInt(prompt("输入第二个值"));
+        var c = parseInt(prompt("输入第三个值"));
+        a<b&&(a+=b, b=a-b, a-=b);
+        b<c&&(b+=c, c=b-c, b-=c);
+        a<b&&(a+=b, b=a-b, a-=b);
+        console.log(a+","+b+","+c);
+    </script>
+</head>
+<body>
+</body>
+</html>

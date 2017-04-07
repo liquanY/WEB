@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>函数找出数组中的最大值</title>
+    <meta charset="UTF-8">
+    <script>
+        //定义一个函数 找出数组中的最大值
+        function getMax(arr){
+            var max = arr[0];
+            for(var i=1; i<arr.length; i++){
+                arr[i]>max && (max=arr[i]);
+            }
+            return max;
+        }
+        console.log(getMax([3,7,4,5,8,9,6]));
+    </script>
+</head>
+<body>
+</body>
+</html>
