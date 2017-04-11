@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>a中href属性中的url</title>
+    <meta charset="UTF-8">
+    <script>
+        var html = "<link rel='stylesheet' href='http://index.css'>"+
+                "<a name='Top'></a>"+
+                "<a class='navi' href='http://tmooc.cn'></a>"+
+                "<h1 class='title'></h1>"+
+                "<a href='http://tedu.cn' target='_blank'></a>"+
+                "<div></div>";
+        var reg = /<a\s+(.*?)href=['"]([^'"]*)['"]/ig;
+        var urls = [];
+        while((arr = reg.exec(html)) != null){
+            urls.push(RegExp.$2);
+        }
+        console.log(urls.join("\n"));
+    </script>
+</head>
+<body>
+</body>
+</html>

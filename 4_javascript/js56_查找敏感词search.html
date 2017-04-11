@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>查找敏感词search</title>
+    <meta charset="UTF-8">
+    <script>
+        var reply = prompt("输入回复");
+        var reg = /买[了个]{0,2}表/;
+        if(reply.search(reg)!=-1){
+            alert("发现敏感词");
+        }else{
+            alert("没有敏感词");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

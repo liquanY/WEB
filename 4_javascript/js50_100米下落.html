@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>100米下落</title>
+    <meta charset="UTF-8">
+    <script>
+        //100米下落 每次弹起上次的一半 第n次落地 经过的总距离 下次弹起的高度
+        var n = 2;
+        var h = 100, up = h/2;
+        for(var i=1; i<n; i++){
+            h += up*2;
+            up /= 2;
+        }
+        console.log(h+","+up);
+    </script>
+</head>
+<body>
+</body>
+</html>

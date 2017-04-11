@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>双色球</title>
+    <meta charset="UTF-8">
+    <script>
+        function doubleBall(){
+            var reds = [parseInt(Math.random()*33+1)];
+            var blue = null;
+            while(reds.length<6){
+                var r = parseInt(Math.random()*33+1);
+                for(var i=0,len=reds.length; i<len; i++){
+                    if(reds[i]==r){
+                        break;
+                    }else if(i==len-1){
+                        reds.push(r);
+                    }
+                }
+            }
+            function compare(a,b){return a-b}
+            reds.sort(compare);
+            blue = parseInt(Math.random()*16+1);
+            return reds.join()+" "+blue;
+        }
+        console.log(doubleBall());
+        console.log(doubleBall());
+        console.log(doubleBall());
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>计算活了多少天以及我的年龄</title>
+    <meta charset="UTF-8">
+    <script>
+        var now = new Date();
+        var birth = new Date("1991/12/26");
+        var mils = now-birth;
+        var days = Math.floor(mils/1000/60/60/24);
+        console.log("已经活了:"+days+"天");
+        var age = Math.ceil(days/365);
+        console.log("年龄:"+age);
+    </script>
+</head>
+<body>
+</body>
+</html>

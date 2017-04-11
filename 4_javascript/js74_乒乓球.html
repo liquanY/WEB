@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>乒乓球</title>
+    <meta charset="UTF-8">
+    <script>
+        var t2 = ["x","y","z"];
+        for(var a=0; a<3; a++){
+            for(var b=0; b<3; b++){
+                if(a!=b){//去掉a和b是同一对手的可能
+                    for(var c=0; c<3; c++){
+                        if(a!=c && b!=c){//去掉和c相同对手的可能
+                            if(t2[a]!="x" && t2[c]!="x" && t2[c]!="z"){
+                                console.log(t2[a]+t2[b]+t2[c]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

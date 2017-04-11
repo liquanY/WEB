@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>遍历省份下的区域</title>
+    <meta charset="UTF-8">
+    <script>
+        var provs = ["北京市","天津市","山东省"];
+        var cities = [
+            ["东城区","西城区","海淀区"],
+            ["和平区","南开区","滨海新区"],
+            ["济南市","德州市","青岛市"]
+        ];
+        var input = prompt("输入省份名称");
+        for(var i=0; i<provs.length; i++){
+            if(provs[i]==input){
+                console.log(cities[i].join(" "));
+                break;
+            }else if(i==provs.length-1){
+                console.log("省份不存在");
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

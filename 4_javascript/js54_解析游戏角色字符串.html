@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>解析游戏角色字符串</title>
+    <meta charset="UTF-8">
+    <script>
+        var msg = "Tom@补给兵@%60#Mary@医护兵@%80#John@特种兵@%30";
+        var roles = msg.split("#");
+        for(var i=0; i<roles.length; i++){
+            var props = roles[i].split("@");
+            console.log(props[0]+" "+props[1]+" 生命:"+props[2]);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

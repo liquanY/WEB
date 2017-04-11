@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>split练习</title>
+    <meta charset="UTF-8">
+    <script>
+        var html = '<a href="#">smith</a><br><a href="#">eric</a><br><a href="#">jerry</a>';
+        document.write(html+"<br>");
+        html = html.slice(12,-4);
+        var names = html.split('</a><br><a href="#">');
+        console.log(names.join(" "));
+        names.sort();
+        html = '<a href="#">'+names.join('</a><br><a href="#">')+'</a>'
+        document.write(html);
+    </script>
+</head>
+<body>
+</body>
+</html>

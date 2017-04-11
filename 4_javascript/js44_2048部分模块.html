@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2048部分模块</title>
+    <meta charset="UTF-8">
+    <script>
+        var data = [
+            [1,1,1,1],
+            [1,1,1,1],
+            [1,1,2,1],
+            [1,1,1,1]
+        ];
+        function isGameOver(){
+            if(!isFull()){
+                return false;
+            }else{
+                for(var row=0; row<data.length; row++){
+                    for(var col=0; col<data[row].length; col++){
+                        if(col!=data[row].length-1 && data[row][col]==data[row][col+1]){
+                            return false;
+                        }
+                        if(row!=data.length-1 && data[row][col]==data[row+1][col]){
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+        console.log(isGameOver());
+        function isFull(){
+            for(var row=0; row<data.length; row++){
+                for(var col=0; col<data[row].length; col++){
+                    if(data[row][col]==0){
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        console.log(isFull());
+    </script>
+</head>
+<body>
+</body>
+</html>

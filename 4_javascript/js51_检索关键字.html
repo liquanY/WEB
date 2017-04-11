@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>检索关键字</title>
+    <meta charset="UTF-8">
+    <script>
+        var kword = "我去";
+        var str = "我去了女神家,我说:我去,你家真大";
+        var index = -1;
+        while((index=str.indexOf(kword,index+1))!=-1){
+            console.log("在位置"+index+"发现关键词");
+        }
+        var index2 = str.length;
+        while((index2=str.lastIndexOf(kword,index2-1))!=-1){
+            console.log("在位置"+index2+"发现关键词");
+            if(index2==0){
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

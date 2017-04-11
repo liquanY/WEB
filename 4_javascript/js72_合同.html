@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>合同</title>
+    <meta charset="UTF-8">
+    <script>
+        //计算合同到期时间
+        var hiredate = new Date("2012/06/30");//入职时间 三年有效
+        var enddate = new Date(hiredate.getTime());
+        enddate.setFullYear(enddate.getFullYear()+3);
+        //到期时间之前一个月 续签合同
+        var resdate = new Date(enddate.getTime());
+        resdate.setMonth(resdate.getMonth()-1);
+        //判断是否周六或周日
+        if(resdate.getDay()==6){
+            resdate.setDate(resdate.getDate()-1);
+        }else if(resdate.getDay()==0){
+            resdate.setDate(resdate.getDate()-2);
+        }
+        //续签时间一个星期签 提醒续签
+        var alertdate = new Date(resdate.getTime());
+        alertdate.setDate(alertdate.getDate()-7);
+
+        console.log("入职时间"+hiredate.toLocaleDateString());
+        console.log("到期时间"+enddate.toLocaleDateString());
+        console.log("续签时间"+resdate.toLocaleDateString());
+        console.log("提醒时间"+alertdate.toLocaleDateString());
+    </script>
+</head>
+<body>
+</body>
+</html>

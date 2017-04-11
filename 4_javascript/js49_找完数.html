@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>找完数</title>
+    <meta charset="UTF-8">
+    <script>
+        //找完数:所有因子的和等于本身
+        var arr = [];
+        for(var n=2; n<1000; n++){
+            for(var i=1,sum=0; i<=n/2; i++){
+                n%i==0 && (sum+=i);
+            }
+            n==sum && (arr.push(n));
+        }
+        console.log(arr.join(" "));
+    </script>
+</head>
+<body>
+</body>
+</html>

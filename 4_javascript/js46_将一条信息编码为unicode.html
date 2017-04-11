@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>将一条信息编码为unicode</title>
+    <meta charset="UTF-8">
+    <script>
+        var msg = prompt("输入一条消息");
+        for(var i= 0,arr=[]; i<msg.length; i++){
+            var code = msg.charCodeAt(i);
+            code = (100000+code+"").slice(1);
+            arr.push(code);
+        }
+        console.log(arr.join(""));
+    </script>
+</head>
+<body>
+</body>
+</html>

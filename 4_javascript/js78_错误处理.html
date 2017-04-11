@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>错误处理</title>
+    <meta charset="UTF-8">
+    <script>
+        var n;
+        function fun(){
+            try{
+                n = 1;
+                return n;
+            }catch(err){
+            }finally{
+                n=3;
+            }
+        }
+        console.log(fun());//1
+        console.log(n);//3
+    </script>
+</head>
+<body>
+</body>
+</html>

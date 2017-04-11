@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>统计字符串中每个字符重复的次数</title>
+    <meta charset="UTF-8">
+    <script>
+        var str = "you can you up";
+        var arr =[];
+        for(var i=0; i<str.length; i++){
+            if(arr[str[i]]!=undefined){
+                arr[str[i]]++;
+            }else{
+                arr[str[i]] = 1;
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+</body>
+</html>

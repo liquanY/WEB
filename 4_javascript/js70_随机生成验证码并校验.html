@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>随机生成验证码并校验</title>
+    <meta charset="UTF-8">
+    <script>
+        var chars = [];
+        for(var c=48; c<=57; chars.push(String.fromCharCode(c++)));
+        for(var c=65; c<=90; chars.push(String.fromCharCode(c++)));
+        for(var c=97; c<=122; chars.push(String.fromCharCode(c++)));
+        function getCode(){
+            var code = [];
+            while(code.length<4){
+                var i = parseInt(Math.random()*62);
+                code.push(chars[i]);
+            }
+            return code.join("");
+        }
+        var code = getCode();
+        var input = "";
+        while((input = prompt("输入验证码:"+code)).toUpperCase()!=code.toUpperCase()){
+            alert("验证码错误");
+            code = getCode();
+        }
+        alert("验证通过");
+    </script>
+</head>
+<body>
+</body>
+</html>

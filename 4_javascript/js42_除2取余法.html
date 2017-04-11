@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>除2取余法</title>
+    <meta charset="UTF-8">
+    <script>
+        var n = prompt("输入一个整数");
+        var stack = [];
+        while(n>0){
+            stack.unshift(n%2);
+            n = parseInt(n/2);
+        }
+        console.log(stack.join(""));
+    </script>
+</head>
+<body>
+</body>
+</html>

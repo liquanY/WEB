@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>验证密码强度</title>
+    <meta charset="UTF-8">
+    <script>
+        var reg=/^(?![a-zA-Z]+$)(?![a-z0-9]+$)[a-zA-Z0-9]{8}$/;
+        if(reg.test(prompt("输入密码:"))){
+            alert("密码格式安全");
+        }else{
+            alert("密码强度太低");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

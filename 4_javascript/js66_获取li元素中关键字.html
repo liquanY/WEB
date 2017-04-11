@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>获取li元素中关键字</title>
+    <meta charset="UTF-8">
+    <script>
+        var html = "<li>smith</li><br>"+
+                "<li>eric</li>"+
+                "<li class='curr'>tom</li><br>"+
+                "<li>scott</li>";
+        var reg = /<\/li>\s*.*?<li.*?>/;
+        var names = html.trim().slice(4,-5).split(reg);
+        console.log(names.join(" "));
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>英文句子单词首字母大写</title>
+    <meta charset="UTF-8">
+    <script>
+        var stmt = "no zuo no die";
+        var words = stmt.split(" ");
+        for(var i=0; i<words.length; i++){
+            words[i] = words[i][0].toUpperCase()+words[i].slice(1);
+        }
+        stmt = words.join(" ");
+        console.log(stmt);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>替换所有敏感词</title>
+    <meta charset="UTF-8">
+    <script>
+        var str = "纪委负责全国党员干部的纪检监察工作";
+        var reg = /纪[检委](监察)?/;
+        var keyWords = null;
+        while((keyWords = str.match(reg))!=null){
+            str = str.replace(reg,keyWords[0].length==2?"**":"****");
+        }
+        console.log(str);
+    </script>
+</head>
+<body>
+</body>
+</html>

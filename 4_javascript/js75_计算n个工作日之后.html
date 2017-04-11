@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>计算n个工作日之后</title>
+    <meta charset="UTF-8">
+    <script>
+        var date = new Date("2015/5/29");
+        var days = 9;
+        while(days>0){
+            if(date.getDay()==5){
+                date.setDate(date.getDate()+2);
+            }else if(date.getDay()==6){
+                date.setDate(date.getDate()+1);
+            }else{
+                date.setDate(date.getDate()+1);
+                days--;
+            }
+        }
+        date.setDate(date.getDate()+1);
+        console.log(date.toLocaleDateString());
+    </script>
+</head>
+<body>
+</body>
+</html>

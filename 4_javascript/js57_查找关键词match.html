@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>查找关键词match</title>
+    <meta charset="UTF-8">
+    <script>
+        var str = "No zuo no die; No can no bi bi";
+        var reg = /no/ig;
+        var kwords = str.match(reg);
+        if(kwords!=null){
+            console.log(kwords.join(" "));
+            console.log("共找到"+kwords.length+"个");
+        }else{
+            console.log("没找到!");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>打印方片</title>
+    <meta charset="UTF-8">
+    <script>
+        var l = 9;
+        for(var r=1; r<(l+1); r++){
+            for(var c2=1,arr=["*"]; c2<(l+1)/2; c2++){
+                if(r<(l+1)/2){
+                    arr.unshift(c2<r?"**":"  ");
+                    arr.push(c2<r?"**":"  ");
+                }else{
+                    arr.unshift(c2<=l-r?"**":"  ");
+                    arr.push(c2<=l-r?"**":"  ");
+                }
+            }
+            console.log(arr.join(""));
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

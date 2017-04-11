@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>错误处理</title>
+    <meta charset="UTF-8">
+    <script>
+        var n;
+        function fun(){
+            try{
+                n = 1;
+                console.log(m);//ReferrenceError
+                return n;
+            }catch(err){
+                n = 2;
+                return n;
+            }finally{
+                n = 3;
+            }
+        }
+        console.log(fun());//2
+        console.log(n);//3
+    </script>
+</head>
+<body>
+</body>
+</html>

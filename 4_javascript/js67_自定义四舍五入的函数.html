@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>自定义四舍五入的函数</title>
+    <meta charset="UTF-8">
+    <script>
+        function round(num,d){
+            num *= Math.pow(10,d);
+            num = Math.round(num.toFixed(2));
+            num /= Math.pow(10,d);
+            return num;
+        }
+        console.log(round(23.456,2));//23.46
+        console.log(round(345.56,0));//346
+        console.log(round(345.56,-1));//350
+        console.log(round(555.555,2));//555.56
+    </script>
+</head>
+<body>
+</body>
+</html>

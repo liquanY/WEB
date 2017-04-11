@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>验证码</title>
+    <meta charset="UTF-8">
+    <script>
+        var code = "eR7S";
+        var input = "";
+        while((input = prompt("请输入验证码:"+code)).toUpperCase()!=code.toUpperCase()){
+            alert("验证码错误！");
+        }
+        alert("验证通过");
+    </script>
+</head>
+<body>
+</body>
+</html>

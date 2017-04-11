@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>统计字符串中每种字符出现的个数</title>
+    <meta charset="UTF-8">
+    <script>
+        var str = "今晚308,w84u";
+        var arr = [];
+        arr["num"] = 0;
+        arr["chs"] = 0;
+        arr["let"] = 0;
+        arr["oth"] = 0;
+        for(var i=0; i<str.length; i++){
+            str[i]>="0" && str[i]<="9"?arr["num"]++:
+                    str[i]>="一" && str[i]<="\u9fa5"?arr["chs"]++:
+                    str[i]>="A" && str[i]<="Z" || str[i]>="a" && str[i]<="z"?arr["let"]++:
+                            arr["oth"]++;
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+</body>
+</html>
