@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>判断一个对象是不是数组</title>
+    <meta charset="UTF-8">
+    <script>
+        var arr = [1,2,3];//Array.property
+        var obj = {};//Object.property
+        var fun = function(){};//Function.property
+
+        //typeof
+        console.log(typeof arr);//object 判断失败
+        console.log(typeof obj);//object
+        console.log(typeof fun);//function
+        console.log("\n");
+
+        //isPrototypeOf
+        if(Array.prototype.isPrototypeOf(arr)){
+            console.log("arr是数组");
+        }
+        if(Array.prototype.isPrototypeOf(obj)){
+            console.log("obj是数组");
+        }
+        if(Array.prototype.isPrototypeOf(fun)){
+            console.log("fun是数组");
+        }
+        console.log("\n");
+
+        //instanceof
+        if(arr instanceof Array){
+            console.log("arr是数组");
+        }
+        if(obj instanceof Object){
+            console.log("obj是对象");
+        }
+        if(fun instanceof Function){
+            console.log("fun是函数");
+        }
+        console.log("\n");
+
+        //getPrototypeOf
+        if(Object.getPrototypeOf(arr)==Array.prototype){
+            console.log("arr是数组");
+        }
+        if(Object.getPrototypeOf(obj)==Object.prototype){
+            console.log("obj是对象");
+        }
+        if(Object.getPrototypeOf(fun)==Function.prototype){
+            console.log("fun是函数");
+        }
+        console.log("\n");
+
+        //toString
+        console.log(Object.prototype.toString.call(arr));
+        console.log(Object.prototype.toString.call(obj));
+        console.log(Object.prototype.toString.call(fun));
+    </script>
+</head>
+<body>
+</body>
+</html>

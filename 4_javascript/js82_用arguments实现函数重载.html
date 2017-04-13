@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用arguments实现函数重载</title>
+    <meta charset="UTF-8">
+    <script>
+        function calc(){
+            if(arguments.length == 1){
+                return arguments[0]*arguments[0];
+            }else{
+                return arguments[0]+arguments[1];
+            }
+        }
+        console.log(calc(13));//169
+        console.log(calc(12,23));//35
+    </script>
+</head>
+<body>
+</body>
+</html>

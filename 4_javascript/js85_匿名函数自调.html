@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>匿名函数自调</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        (function(){
+            alert("页面开始加载");
+        })();
+    </script>
+    <h1>Eric</h1>
+    <h1>Smith</h1>
+    <h1>Tom</h1>
+    <h1>Jerry</h1>
+    <script>
+        (function(){
+            alert("页面加载完毕");
+        })();
+    </script>
+</body>
+</html>

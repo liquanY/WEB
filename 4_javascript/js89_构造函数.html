@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>构造函数</title>
+    <meta charset="UTF-8">
+    <style>
+        #parentDiv{
+            width: 492px;
+            height: 382px;
+            background-image: url("javascript1.jpg");
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+        #hmm{
+            width: 50px;
+            height: 60px;
+            cursor: pointer;
+            margin-top: 135px;
+            margin-left: 190px;
+            position: absolute;
+        }
+        #lilei{
+            width: 80px;
+            height: 70px;
+            cursor: pointer;
+            margin-top: 90px;
+            margin-left: 65px;
+            position: absolute;
+        }
+        #dialog{
+            position: absolute;
+            width: 160px;
+            height: 120px;
+            padding: 12px;
+            background-image: url("javascript2.png");
+            background-repeat: no-repeat;
+            font-size: 1.5em;
+            top: 0;
+            left: 280px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="parentDiv">
+        <div id="lilei" onmousemove="lilei.intrSelf()" onmouseout="dialog.style.display='none'"></div>
+        <div id="hmm" onmousemove="hmm.intrSelf()" onmouseout="dialog.style.display='none'"></div>
+    </div>
+    <div id="dialog"></div>
+
+    <script>
+        //构造函数
+        function Student(sname,age){
+            this.sname = sname;
+            this.age = age;
+            this.intrSelf = function(){
+                var msg = "I'm "+this.sname+",I'm"+this.age;
+                var div = document.getElementById("dialog");
+                div.innerHTML = msg;
+                div.style.display = "block";
+            }
+        }
+        //调用构造函数创建对象
+        var lilei = new Student("Li Lei",18);
+        var hmm = new Student("Han Meimei",19);
+    </script>
+</body>
+</html>

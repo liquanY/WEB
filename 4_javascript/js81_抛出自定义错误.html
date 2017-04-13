@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>抛出自定义错误</title>
+    <meta charset="UTF-8">
+    <script>
+        function round(num,d){
+            if(!isNaN(d)){
+                num *= Math.pow(10,d);
+                num = Math.round(num.toFixed(2));
+                num /= Math.pow(10,d);
+                return num;
+            }else{
+                throw new Error("第二个参数必须是数字");
+            }
+        }
+        function fun2(){
+            var num = prompt("输入要四舍五入的值");
+            var d = prompt("输入位数");
+            try{
+                alert(round(num,d));
+            }catch(err){
+                alert("位数必须是数字");//用户看到的 友好的
+                console.log(err.message);//错误信息 给程序员看
+            }
+        }
+        fun2();
+    </script>
+</head>
+<body>
+</body>
+</html>

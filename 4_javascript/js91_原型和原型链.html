@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>原型和原型链</title>
+    <meta charset="UTF-8">
+    <script>
+        function Student(sname,age){
+            this.sname = sname;
+            this.age = age;
+        }
+        //构造函数的原型对象 添加intrSelf函数
+        Student.prototype.intrSelf = function(){
+            console.log("I'm "+this.sname+" I'm "+this.age);
+        }
+        var lilei = new Student("Li Lei",18);
+        var hmm = new Student("Han Meimei",19);
+        lilei.intrSelf();
+        hmm.intrSelf();
+    </script>
+</head>
+<body>
+</body>
+</html>

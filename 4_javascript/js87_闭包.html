@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>闭包</title>
+    <meta charset="UTF-8">
+    <script>
+        function outer(){
+            var n = 0;
+            return function(){return ++n;}
+        }
+        var getNum = outer();
+        console.log(getNum());
+        console.log(getNum());
+        console.log(getNum());
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>原型相关的API</title>
+    <meta charset="UTF-8">
+    <script>
+        //in
+        if(!("trim" in String.prototype)){
+            document.write("自定义了的trim方法");
+            String.prototype.trim = function(){
+                return this.replace(/^\s+|\s+$/g,"");
+            }
+        }
+        var str = "\t hello world \t";
+        document.write(str.trim());
+
+        //自有属性
+        function Student(sname,age){
+            this.sname=sname;
+            this.age=age;
+        }
+        Student.prototype.intrSelf=function(){
+            console.log("I'm "+this.sname+" I'm "+this.age);
+        }
+        var lilei=new Student("Li Lei",18);
+        var hmm=new Student("Han Meimei",19);
+        hmm.money = 5;
+        console.log(lilei.hasOwnProperty("money"));//false
+        console.log(hmm.hasOwnProperty("money"));//true
+
+        //共有属性
+        console.log(!(hmm.hasOwnProperty("intrSelf")) && "intrSelf" in hmm);//true
+        console.log(!(hmm.hasOwnProperty("sname")) && "sname" in hmm);//false
+
+        //获得父对象
+        console.log(Object.getPrototypeOf(hmm));
+
+        //判断父对象是否处在子对象原型链的上级
+        console.log(Student.prototype.isPrototypeOf(hmm));//true
+    </script>
+</head>
+<body>
+</body>
+</html>

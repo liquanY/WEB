@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>匿名函数自调</title>
+    <meta charset="UTF-8">
+    <script>
+        var n = 10;
+        (function(n){
+            n--;
+            console.log(n);
+        })(n);//9
+        console.log(n);//10
+    </script>
+</head>
+<body>
+</body>
+</html>

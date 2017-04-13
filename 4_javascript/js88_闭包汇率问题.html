@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>闭包汇率问题</title>
+    <meta charset="UTF-8">
+    <script>
+        function change(rate){
+            return function(rmb){
+                return (rmb/rate).toFixed(1);
+            }
+        }
+        var to$ = change(6.1);
+        console.log(to$(1000));//163.9
+        console.log(to$(5000));//819.7
+        var toEuro = change(6.9);
+        console.log(toEuro(1000));//144.9
+    </script>
+</head>
+<body>
+</body>
+</html>

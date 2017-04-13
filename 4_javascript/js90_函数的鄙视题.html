@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>函数的鄙视题</title>
+    <meta charset="UTF-8">
+    <script>
+        function foo(){
+            return this.a;
+        }
+        var a = 2;
+        var o = {
+            a : 3,
+            foo : foo
+        };
+        console.log(o.foo());//3
+        var p = {
+            a : 4
+        };
+        p.foo = o.foo;
+        console.log(p.foo());//4
+        console.log(foo());//2
+    </script>
+</head>
+<body>
+</body>
+</html>
