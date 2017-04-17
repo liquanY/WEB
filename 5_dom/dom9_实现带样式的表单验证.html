@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>实现带样式的表单验证</title>
+    <meta charset="UTF-8">
+    <style>
+        table{
+            width: 700px
+        }
+        td:first-child{
+            width: 60px
+        }
+        td:first-child+td{
+            width: 200px;
+        }
+        td span{
+            color: red;
+        }
+        .vali_Info{
+            display:none;
+        }
+        .txt_focus{
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+        }
+        .vali_success,.vali_fail{
+            background-repeat: no-repeat;
+            background-position: left center;
+            display: block;
+        }
+        .vali_success{
+            background-image: url("d3.png");
+            padding-left: 20px;
+            width: 0px;
+            height: 20px;
+            overflow: hidden;
+        }
+        .vali_fail{
+            background-image: url("d4.png");
+            border: 1px solid red;
+            background-color: #ddd;
+            color: red;
+            padding-left: 30px;
+        }
+    </style>
+    <script>
+        function getFocus(txt){
+            txt.setAttribute("class","txt_focus");
+            txt.parentNode.parentNode.querySelector("div").removeAttribute("class");
+        }
+        function valiName(txtName){
+            txtName.removeAttribute("class");
+            var div = txtName.parentNode.parentNode.querySelector("div");
+            if(/^\w{1,10}$/.test(txtName.value)){
+                div.setAttribute("class","vali_success");
+            }else{
+                div.setAttribute("class","vali_fail");
+            }
+        }
+        function valiPwd(txtPwd){
+            txtPwd.removeAttribute("class");
+            var div = txtPwd.parentNode.parentNode.querySelector("div");
+            if(/^\d{6}$/.test(txtPwd.value)){
+                div.setAttribute("class","vali_success");
+            }else{
+                div.setAttribute("class","vali_fail");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <h2>增加管理员</h2>
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td>
+                    <input name="name" onfocus="getFocus(this)" onblur="valiName(this)"/>
+                    <span>*</span>
+                </td>
+                <td>
+                    <div class="vali_Info">
+                        10个字符以内的字母、数字和下划线的组合
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td>
+                    <input type="password" name="pwd" onfocus="getFocus(this)" onblur="valiPwd(this)"/>
+                    <span>*</span>
+                </td>
+                <td>
+                    <div class="vali_Info">6位数字</div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="submit" value="保存"/>
+                    <input type="reset" value="重填"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

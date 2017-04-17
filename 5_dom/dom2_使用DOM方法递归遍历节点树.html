@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>使用DOM方法递归遍历节点树</title>
+    <meta charset="UTF-8">
+    <script>
+        window.onload = function(){
+            var tabs = ["|-"];
+            (function(curr){
+                console.log(tabs.join("")+
+                        (curr.nodeType!=1 &&
+                        curr.nodeType!=9 &&
+                        curr.nodeType!=10?
+                        curr.nodeValue:curr.nodeName));
+                var children = curr.childNodes;
+                if(children){
+                    tabs.unshift("\t");
+                    for(var i= 0,len=children.length; i<len; i++){
+                        arguments.callee(children[i]);
+                    }
+                    tabs.shift();
+                }
+            })(document);
+        }
+    </script>
+</head>
+<body>
+    <span class="msg">Hello World !</span>
+    <ul>
+        <li>电影</li>
+        <li>综艺
+            <ul>
+                <li>跑男</li>
+                <li>爸爸</li>
+                <li>真男</li>
+            </ul>
+        </li>
+        <li>剧集</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>动态创建表格</title>
+    <meta charset="UTF-8">
+    <style>
+        table{
+            width: 600px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td,th{
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        //假定从服务器端收到的json字符串
+        var json = '['
+                +'{"ename":"Tom","salary":5000,"age":25},'
+                +'{"ename":"John","salary":7000,"age":28},'
+                +'{"ename":"Mary","salary":6000,"age":26}'
+                +']';
+        //将json字符串转换为内存中的对象
+        var emps = eval(json);
+        window.onload = function(){
+            var table = document.createElement("table");
+            var thead = document.createElement("thead");
+            table.appendChild(thead);
+            var tr = document.createElement("tr");
+            thead.appendChild(tr);
+            for(var key in emps[0]){
+                var th = document.createElement("th");
+                th.innerHTML = key;
+                tr.appendChild(th);
+            }
+            var tbody = document.createElement("tbody");
+            table.appendChild(tbody);
+            for(var i=0; i<emps.length; i++){
+                var tr = document.createElement("tr");
+                tbody.appendChild(tr);
+                for(var key in emps[i]){
+                    var td = document.createElement("td");
+                    td.innerHTML = emps[i][key];
+                    tr.appendChild(td);
+                }
+            }
+            document.getElementById("data").appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <div id="data"></div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单提交验证</title>
+    <meta charset="UTF-8">
+    <style>
+        .hintText{
+            color: #aaaaaa;
+            font-style: italic;
+        }
+        .normalText {
+            color: #000000;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var form = document.forms[0];
+            var txtName = form.elements["userName"];
+            txtName.onfocus = function(){
+                var reg = /^(\s*|请输入您的姓名)$/;
+                if(reg.test(txtName.value)){
+                    txtName.value = "";
+                    txtName.className = "";
+                }
+            };
+            txtName.onblur = function(){
+                var reg = /^(\s*|请输入您的姓名)$/;
+                if(reg.test(txtName.value)){
+                    txtName.value = "请输入您的姓名";
+                    txtName.className = "hintText";
+                }
+            };
+            var txtContent = form.elements["content"];
+            txtContent.onfocus = function(){
+                var reg = /^(\s*|请输入留言内容)$/;
+                if(reg.test(txtContent.value)){
+                    txtContent.value = "";
+                    txtContent.className = "";
+                }
+            };
+            txtContent.onblur = function(){
+                var reg = /^(\s*|请输入留言内容)$/;
+                if(reg.test(txtContent.value)){
+                    txtContent.value = "请输入留言内容";
+                    txtContent.className = "hintText";
+                }
+            };
+            //点击已阅读 启用提交
+            var chb = form.querySelector('input[type="checkbox"]');
+            var btnSubmit = form.querySelector('input[type="button"]');
+            chb.onclick = function(){
+                btnSubmit.disabled = !chb.checked;
+            }
+            btnSubmit.onclick = function(){
+                if(/^(\s*|请输入您的姓名)$/.test(txtName.value)){
+                    txtName.focus();
+                }else if(/^(\s*|请输入留言内容)$/.test(txtContent.value)){
+                    txtContent.focus();
+                }else{
+                    form.submit();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>发表留言</h2>
+    <form name="msgForm">
+        姓名：<input name="userName" class="hintText" value="请输入您的姓名"/>
+        <br />
+        内容：<textarea name="content" class="hintText" style="resize: none" rows="5" cols="30">请输入留言内容</textarea>
+        <br />
+        <label><input type="checkbox"/>我已阅读了《常见问题列表》</label>
+        <br/>
+        <input type="button" disabled value="提交"/>
+    </form>
+</body>
+</html>
