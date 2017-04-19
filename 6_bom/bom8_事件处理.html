@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>事件处理</title>
+    <meta charset="UTF-8">
+    <style>
+        .d1{
+            background-color: green;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+        .d2{
+            background-color: blue;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 100px;
+            height: 100px;
+        }
+        .d3{
+            background-color: red;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        //体验冒泡事件
+
+        //第一部分 点击内部 全部响应
+//        function fun(){
+//            this.style.backgroundColor = "yellow";
+//            alert(this.className);
+//            this.style.backgroundColor = "";
+//        }
+//        window.onload = function(){
+//            var divs = document.querySelectorAll("div");
+//            divs[0].onclick = fun;
+//            divs[1].onclick = fun;
+//            divs[2].onclick = fun;
+//        }
+
+        //第二部分 点击内部 捕获响应阶段
+//        function fun(){
+//            this.style.backgroundColor = "yellow";
+//            alert(this.className);
+//            this.style.backgroundColor = "";
+//        }
+//        window.onload = function(){
+//            var divs = document.querySelectorAll("div");
+//            divs[0].addEventListener("click",fun,false);
+//            divs[1].addEventListener("click",fun,true);
+//            divs[2].addEventListener("click",fun,false);
+//        }
+
+        //第三部分 取消冒泡
+//        function fun(){
+//            var e = window.event||arguments[0];
+//            this.style.backgroundColor = "yellow";
+//            alert(this.className);
+//            this.style.backgroundColor = "";
+//            if(e.stopPropagation){
+//                e.stopPropagation();
+//            }else{
+//                e.cancelBubble = true;
+//            }
+//        }
+//        window.onload = function(){
+//            var divs = document.querySelectorAll("div");
+//            divs[0].addEventListener("click",fun,false);
+//            divs[1].addEventListener("click",fun,false);
+//            divs[2].addEventListener("click",fun,false);
+//        }
+    </script>
+</head>
+<body>
+    <div class="d1">
+        <div class="d2">
+            <div class="d3">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

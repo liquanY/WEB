@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>窗口右下角消息弹出框</title>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #msg{
+            width: 200px;
+            height: 200px;
+            position: fixed;
+            right: 30px;
+            bottom: -200px;
+            background-color: LightBlue;
+        }
+        #msg>a{
+            float: right;
+            padding: 5px 10px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var adv = {
+            duration : 1000,//总时长1秒
+            interval : 30,//每步间隔30毫秒
+            div : null,//保存移动的div对象
+            height : 0,//div的总高度
+            init : function(){
+                this.div = document.getElementById("msg");
+                var style = getComputedStyle(this.div);
+                this.height = parseFloat(style.height);
+            },
+            moveUpStep : function(){
+                var style = getComputedStyle(this.div);
+                var bottom = parseFloat(style.bottom);
+                bottom += this.height*this.interval/this.duration;
+                this.div.style.bottom = bottom+"px";
+                if(bottom < 0){
+                    setTimeout(function(){
+                        adv.moveUpStep();
+                    },this.interval);
+                }
+            },
+            startMoveUp : function(){
+                setTimeout(function(){
+                    adv.moveUpStep();
+                },this.interval);
+            },
+            moveDownStep : function(){
+                var style = getComputedStyle(this.div);
+                var bottom = parseFloat(style.bottom);
+                bottom -= this.height*this.interval/this.duration;
+                this.div.style.bottom = bottom+"px";
+                if(bottom > -this.height){
+                    setTimeout(function(){
+                        adv.moveDownStep();
+                    },this.interval);
+                }else{
+                    setTimeout(function(){
+                        adv.moveUpStep();
+                    },5000);
+                }
+            },
+            startMoveDown : function(){
+                setTimeout(function(){
+                    adv.moveDownStep();
+                },this.interval);
+            }
+        };
+        window.onload = function(){
+            adv.init();
+            adv.startMoveUp();
+            document.querySelector("#msg>a").onclick = function(){
+                adv.startMoveDown();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="msg">
+        <a>X</a>
+    </div>
+</body>
+</html>

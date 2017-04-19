@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>点不到的小窗口</title>
+    <meta charset="UTF-8">
+    <script>
+        var game = {
+            width : 50,//小窗口的宽度
+            height : 50,//小窗口的高度
+            taskH : 30,//任务栏高度
+            maxTop : null,//最大top值
+            maxLeft : null,//最大left值
+            pop : null,//游戏中弹出的小窗口
+            start : function(){
+                this.maxTop = screen.height-this.height-this.taskH;
+                this.maxLeft = screen.width-this.width;
+                var wTop = parseInt(Math.random()*(this.maxTop+1));
+                var wLeft = parseInt(Math.random()*(this.maxLeft+1));
+                var config = "top="+wTop+",left="+wLeft+",width="+this.width+",height="+this.height+
+                        ",resizable=no,location=no";
+                this.pop = open("about:blank","pop",config);
+                this.pop.document.write("<img style='width:80px' "+"src='b1.gif' onclick='alert(\"约吗\")' />");
+                this.pop.onmouseover = function(){
+                    var e = window.event||arguments[0];
+                    //获得鼠标相对于显示器的x和y坐标
+                    var x = e.screenX;
+                    var y = e.screenY;
+                    while(true){
+                        var nextX = parseInt(Math.random()*(game.maxLeft+1));
+                        var nextY = parseInt(Math.random()*(game.maxTop+1));
+                        if(!((x>=nextX&&x<=nextX+game.width)&&(y>=nextY&&y<=nextY+game.height))){
+                            this.moveTo(nextX,nextY);
+                            break;
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <button onclick="game.start()">开始游戏</button>
+</body>
+</html>

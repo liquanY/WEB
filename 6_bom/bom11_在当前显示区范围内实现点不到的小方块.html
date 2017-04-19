@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>在当前显示区范围内实现点不到的小方块</title>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        var game = {
+            maxLeft : 0,//小div最大的可用x值
+            maxTop : 0,//小div最大可用的y值
+            WIDTH : 0,//小div的宽
+            HEIGHT : 0,//小div的高
+            div : null,//要移动的小div对象
+            init : function(){
+                var self = this;//留住this
+                self.div = document.getElementById("pop");
+                var style = null;
+                if(getComputedStyle(self.div)){
+                    style = getComputedStyle(self.div);
+                }else{
+                    style = self.div.currentStyle;
+                }
+                self.WIDTH = parseFloat(style.width);
+                self.HEIGHT = parseFloat(style.height);
+                self.maxLeft = window.innerWidth-self.WIDTH;
+                self.maxTop = window.innerHeight-self.HEIGHT-30;
+            },
+            start : function(){
+                var self = this;
+                var l = Math.floor(Math.random()*(self.maxLeft+1));
+                var t = Math.floor(Math.random()*(self.maxTop+1));
+                self.div.style.left = l+"px";
+                self.div.style.top = t+"px";
+                self.div.onmousemove = function(){
+                    while(true){
+                        var l = Math.floor(Math.random()*(self.maxLeft+1));
+                        var t = Math.floor(Math.random()*(self.maxTop+1));
+                        var e = window.event||arguments[0];
+                        var x = e.clientX || e.x;
+                        var y = e.clientY || e.y;
+                        if(!((x>=l&&x<=l+self.WIDTH)&&(y>=t&&y<=t+self.HEIGHT))){
+                            self.div.style.left = l+"px";
+                            self.div.style.top = t+"px";
+                            break;
+                        }
+                    }
+                }
+            }
+        };
+        window.onload = function(){
+            game.init();
+            game.start();
+        }
+    </script>
+</head>
+<body>
+    <div id="pop" onclick="alert('约吗')"></div>
+</body>
+</html>

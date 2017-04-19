@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>在某一特定div范围内实现点不到的小方块</title>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer>div{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+        #outer{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 1px solid green;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        var game = {
+            maxLeft : 0,
+            maxTop : 0,
+            width : 0,
+            height : 0,
+            div : null,
+            init : function(){
+                var self = this;//留住this
+                self.div = document.getElementById("pop");
+                var style = null;
+                if(getComputedStyle(self.div)){
+                    style = getComputedStyle(self.div);
+                }else{
+                    style = self.div.currentStyle;
+                }
+                self.width = parseFloat(style.width);
+                self.height = parseFloat(style.height);
+                var outer = document.getElementById("outer");
+                if(getComputedStyle(outer)){
+                    style = getComputedStyle(outer);
+                }else{
+                    style = outer.currentStyle;
+                }
+                self.maxTop = parseFloat(style.height)-self.height;
+                self.maxLeft = parseFloat(style.width)-self.width;
+                self.div.onmousemove = function(){
+                    while(true){
+                        var l = Math.floor(Math.random()*(self.maxLeft+1));
+                        var t = Math.floor(Math.random()*(self.maxTop+1));
+                        var e = window.event||arguments[0];
+                        var x = e.clientX || e.x;
+                        var y = e.clientY || e.y;
+                        if(!((x>=l&&x<=l+self.width)&&(y>=t&&y<=t+self.height))){
+                            self.div.style.left = l+"px";
+                            self.div.style.top = t+"px";
+                            break;
+                        }
+                    }
+                }
+            }
+        };
+        window.onload = function(){
+            game.init();
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <div id="pop" onclick="alert('约吗?')"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>使用Cookie</title>
+    <meta charset="UTF-8">
+    <script>
+        window.onload = function(){
+            var cookies = document.cookie.split("; ");
+            for(var i=0; i<cookies.length; i++){
+                if(cookies[i].indexOf("userName")!=-1){
+                    location.replace("bom15_使用Cookie.html");
+                }
+            }
+        };
+        function submitForm(){
+            var form = document.forms[0];
+            var userName = form.userName.value;
+            var userPwd = form.userPwd.value;
+            var rads = form.noLogin;
+            for(var i=0,len=rads.length; i<len; i++){
+                if(rads[i].checked){
+                    var expired = new Date(new Date().getTime()+rads[i].value*24*60*60*1000);
+                    document.cookie = "userName="+userName+";expires="+expired.toGMTString();
+                    document.cookie = "userPwd="+userPwd+";expires="+expired.toGMTString();
+                    break;
+                }
+            }
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    <h2>用户登录</h2>
+    <form action="bom15_使用Cookie.html" method="post">
+        用户名：<input name="userName" /><br/>
+        密码：<input name="userPwd" type="password" /><br/>
+        <input type="radio" name="noLogin" value="7"/>一周内不在登录
+        <input type="radio" name="noLogin" value="14"/>两周内不在登录
+        <input type="radio" name="noLogin" value="30"/>一月内不在登录<br/>
+        <input type="button" onclick="submitForm()" value="登录"/>
+    </form>
+</body>
+</html>

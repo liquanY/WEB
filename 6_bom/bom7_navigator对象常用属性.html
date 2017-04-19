@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>navigator对象常用属性</title>
+    <meta charset="UTF-8">
+    <script>
+        if(navigator.cookieEnabled){
+            document.write("已启用cookie");
+        }else{
+            document.write("已禁用cookie");
+        }
+
+        document.write("<br>");
+        document.write(navigator.userAgent);
+
+        document.write("<br>");
+        var ua = navigator.userAgent;
+        var browser = "unknow";
+        if(ua.indexOf("MSIE")!=-1){
+            browser = "MISE";
+        }else if(ua.indexOf("Firefox")!=-1){
+            browser = "Firefox";
+        }else if(ua.indexOf("OPR")!=-1){
+            browser = "OPERA";
+        }else if(ua.indexOf("Chrome")!=-1){
+            browser = "Chrome";
+        }else if(ua.indexOf("Safari")!=-1){
+            browser = "Safari";
+        } else if(ua.indexOf("Trident")!=-1){
+            browser = "IE 11";
+        }
+        var ver = "";
+        if(browser == "unknow"){
+            alert("不支持");
+        }else if(browser == "OPERA"){
+            var i = ua.indexOf("OPR");
+            i += 4;
+            ver = parseFloat(ua.slice(i,i+4));
+        }else if(browser == "IE 11"){
+            ver = "11";
+        }else{
+            var i = ua.indexOf(browser);
+            i += browser.length+1;
+            ver = parseFloat(ua.slice(i,i+4));
+        }
+        alert(browser+" "+ver);
+
+        var ps = navigator.plugins;
+        for(var i=0; i<ps.length; i++){
+            if(ps[i].name == "Chrome PDF Viewer"){
+                alert("能阅读PDF文件");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

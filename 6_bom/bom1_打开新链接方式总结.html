@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>打开新链接方式总结</title>
+    <meta charset="UTF-8">
+    <script>
+        /*打开新链接方式总结：
+         1. 在当前窗口打开 可后退
+         2. 在当前窗口打开 不可后退
+         3. 在新窗口打开 可打开多个
+         4. 在新窗口打开 不可打开多个
+         */
+        function openUrl1(){
+            //第一种
+            window.open("bom101.html","_self");
+        }
+        function openUrl2(){
+            //第二种
+            location.replace("bom101.html");
+        }
+        function openUrl3(){
+            //第三种
+            window.open("bom101.html");
+        }
+        function openUrl4(){
+            //第四种
+            window.open("bom101.html","liquan");
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:openUrl1()">在当前窗口打开 可后退</a><br>
+    <a href="javascript:openUrl2()">在当前窗口打开 不可后退</a><br>
+    <a href="javascript:openUrl3()">在新窗口打开 可打开多个</a><br>
+    <a href="javascript:openUrl4()">在新窗口打开 不可打开多个</a><br>
+</body>
+</html>
