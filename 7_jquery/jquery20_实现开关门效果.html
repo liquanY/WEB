@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>实现开关门效果</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            float:left;
+            height: 100px;
+            line-height: 100px;
+        }
+        #d1,#d3{
+            background-color: #ccff00;
+        }
+        #d2{
+            cursor: pointer;
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">树形列表</div>
+    <div id="d2">&lt;&lt;</div>
+    <div id="d3">内容的主体</div>
+
+    <script>
+        $("#d2").click(function(){
+            if($("#d1").is(":hidden")){
+                $("#d1").show();
+                $("#d2").text("<<");
+            }else{
+                $("#d1").hide();
+                $("#d2").text(">>");
+            }
+        });
+    </script>
+</body>
+</html>

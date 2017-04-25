@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>动态列表效果</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            font-size:12px;
+            text-align:center;
+        }
+        a {
+            color:#04D;
+            text-decoration:none;
+        }
+        a:hover{
+            color:#F50;
+            text-decoration:underline;
+        }
+        .SubCategoryBox{
+            width:600px;
+            margin:0 auto;
+            text-align:center;
+            margin-top:40px;
+        }
+        .SubCategoryBox ul{
+            list-style:none;
+        }
+        .SubCategoryBox ul li{
+            display:block;
+            float:left;
+            width:200px;
+            line-height:20px;
+        }
+        .showmore{
+            clear:both;
+            text-align:center;
+            padding-top:10px;
+        }
+        .showmore a{
+            display:block;
+            width:120px;
+            margin:0 auto;
+            line-height:24px;
+            border:1px solid #AAA;
+        }
+    </style>
+</head>
+<body>
+    <div class="SubCategoryBox">
+        <ul>
+            <li ><a href="#">佳能</a><i>(30440)</i></li>
+            <li ><a href="#">索尼</a><i>(27220)</i></li>
+            <li ><a href="#">三星</a><i>(20808)</i></li>
+            <li ><a href="#">尼康</a><i>(17821)</i></li>
+            <li ><a href="#">松下</a><i>(12289)</i></li>
+            <li ><a href="#">卡西欧</a><i>(8242)</i></li>
+            <li ><a href="#">富士</a><i>(14894)</i></li>
+            <li ><a href="#">柯达</a><i>(9520)</i></li>
+            <li ><a href="#">宾得</a><i>(2195)</i></li>
+            <li ><a href="#">理光</a><i>(4114)</i></li>
+            <li ><a href="#">奥林巴斯</a><i>(12205)</i></li>
+            <li ><a href="#">明基</a><i>(1466)</i></li>
+            <li ><a href="#">爱国者</a><i>(3091)</i></li>
+            <li ><a href="#">其它品牌相机</a><i>(7275)</i></li>
+        </ul>
+        <div class="showmore">
+            <a href="#"><span>显示全部品牌</span></a>
+        </div>
+    </div>
+
+    <script>
+        var $li = $("ul>li:gt(5):not(:last)");
+        $li.hide();
+        $("a>span").click(function(){
+            if($li.is(":hidden")){
+                $li.show();
+                $("a>span").text("精简显示品牌");
+            }else{
+                $li.hide();
+                $("a>span").text("显示全部品牌");
+            }
+        });
+    </script>
+</body>
+</html>

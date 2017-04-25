@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>内容过滤选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+        }
+        .mini{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background: yellow;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">:contains</button>
+    <button id="btn2">:empty</button>
+    <button id="btn3">:parent</button>
+    <button id="btn4">:has</button>
+    <br/><br/>
+    <div>这是第一个div元素.class为div111</div>
+    <div>这是第二个div元素.class为div11
+        <div class="mini"></div>
+    </div>
+    <div>这是第三个div元素.class为div1</div>
+    <div></div>
+
+    <script>
+        //:contains 文本中包含"div11"的div元素
+        $("#btn1").click(function(){
+            $("div:contains('div11')").css("background","green");
+        });
+        //:empty 不包含任何文本内容或子元素的div元素
+        $("#btn2").click(function(){
+            $("div:empty").css("background","green");
+        });
+        //:parent 包含任何文本内容或子元素的div元素
+        $("#btn3").click(function(){
+            $("div:parent").css("background","green");
+        });
+        //:has
+        $("#btn4").click(function(){
+            $("div:has('.mini')").css("background","green");
+        });
+    </script>
+</body>
+</html>

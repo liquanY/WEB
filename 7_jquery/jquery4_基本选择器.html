@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>基本选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+        }
+        .mini{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: blue;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">id选择器</button>
+    <button id="btn2">元素选择器</button>
+    <button id="btn3">class选择器</button>
+    <button id="btn4">*选择器</button>
+    <button id="btn5">复合选择器</button>
+    <br/><br/>
+    <div id="d1">这是id为d1的div元素</div>
+    <div class="mini"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        //id选择器
+        $("#btn1").click(function(){
+           $("#d1").css("background","red");
+        });
+        //元素选择器
+        $("#btn2").click(function(){
+            $("div").css("background","red");
+        });
+        //class选择器
+        $("#btn3").click(function(){
+            $(".mini").css("background","red");
+        });
+        //*选择器
+        $("#btn4").click(function(){
+            $("*").css("background","red");
+        });
+        //复合选择器
+        $("#btn5").click(function(){
+            $("#d1,.mini").css("background","red");
+        });
+    </script>
+</body>
+</html>

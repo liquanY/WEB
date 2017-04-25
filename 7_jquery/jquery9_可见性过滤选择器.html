@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>可见性过滤选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+        }
+        .one{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">可见</button>
+    <button id="btn2">不可见</button>
+    <br/><br/>
+    <div></div>
+    <div></div>
+    <div class="one"></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        $("#btn1").click(function(){
+            $("div:visible").css("background","green");
+        });
+        $("#btn2").click(function(){
+            $("div:hidden").show(3000).css("background","green");
+        });
+    </script>
+</body>
+</html>

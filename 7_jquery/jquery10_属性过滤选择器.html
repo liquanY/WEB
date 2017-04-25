@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>属性过滤选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮2</button>
+    <button id="btn3">按钮3</button>
+    <button id="btn4">按钮4</button>
+    <button id="btn5">按钮5</button>
+    <button id="btn6">按钮6</button>
+    <button id="btn7">按钮7</button>
+    <br/><br/>
+    <div id="div1" name="div1" title="text1"></div>
+    <div id="div11" name="div2" title="text11"></div>
+    <div name="div3" title="text1"></div>
+    <div id="div13" name="div4"></div>
+    <div id="div14" name="div5"></div>
+
+    <script>
+        $("#btn1").click(function(){
+            $("div[title]").css("background","green");
+        });
+        $("#btn2").click(function(){
+            $("div[title=text1]").css("background","green");
+        });
+        $("#btn3").click(function(){
+            $("div[title!=text1]").css("background","green");
+        });
+        $("#btn4").click(function(){
+            $("div[title^=text1]").css("background","green");
+        });
+        $("#btn5").click(function(){
+            $("div[title$=text1]").css("background","green");
+        });
+        $("#btn6").click(function(){
+            $("div[title*=text1]").css("background","green");
+        });
+        $("#btn7").click(function(){
+            $("div[title$=text1][id]").css("background","green");
+        });
+
+    </script>
+</body>
+</html>

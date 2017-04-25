@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>基本过滤选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+        }
+        .mini{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background: yellow;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>基本过滤选择器</h3>
+    <h1>基本过滤选择器</h1>
+    <button id="btn1">:first</button>
+    <button id="btn2">:last</button>
+    <button id="btn3">:even</button>
+    <button id="btn4">:odd</button>
+    <button id="btn5">:gt</button>
+    <button id="btn6">:lt</button>
+    <button id="btn7">:eq</button>
+    <button id="btn8">:not</button>
+    <button id="btn9">:header</button>
+    <button id="btn10">:animated</button>
+    <br/><br/>
+    <div id="d1"></div>
+    <div id="one"></div>
+    <div class="mini"></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        //:first
+        $("#btn1").click(function(){
+            $("div:first").css("background","green");
+        });
+        //:last
+        $("#btn2").click(function(){
+            $("div:last").css("background","green");
+        });
+        //:even 获得索引值为偶数的div元素
+        $("#btn3").click(function(){
+            $("div:even").css("background","green");
+        });
+        //:odd 获得索引值为基数的div元素
+        $("#btn4").click(function(){
+            $("div:odd").css("background","green");
+        });
+        //:gt 获得索引值大于1的div元素
+        $("#btn5").click(function(){
+            $("div:gt(1)").css("background","green");
+        });
+        //:lt 获得索引值小于1的div元素
+        $("#btn6").click(function(){
+            $("div:lt(1)").css("background","green");
+        });
+        //:eq 获得索引值等于1的div元素
+        $("#btn7").click(function(){
+            $("div:eq(1)").css("background","green");
+        });
+        //:not
+        $("#btn8").click(function(){
+            $("div:not('.mini')").css("background","green");
+        });
+        //:header 获得所有标题元素(h1-h6)-不常用
+        $("#btn9").click(function(){
+            $(":header").css("background","green");
+        });
+        //:animated 只能匹配jquery的动画效果
+        function move(){
+            $("#d1").slideToggle(1000,function(){
+                move();
+            });
+        }
+        move();
+        $("#btn10").click(function(){
+            $(":animated").css("background","green");
+        });
+    </script>
+</body>
+</html>

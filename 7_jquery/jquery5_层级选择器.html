@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>层级选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+        }
+        .mini{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background: yellow;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">改变body中所有div元素的背景颜色</button>
+    <button id="btn2">改变body中所有子元素为div的元素的背景颜色</button>
+    <button id="btn3">改变id为one的div元素的下一个div元素的背景颜色</button>
+    <button id="btn4">改变id为one的div元素的后面所有div元素的背景颜色</button>
+    <br/><br/>
+    <div></div>
+    <div id="one">
+        <div class="mini"></div>
+        <div class="mini"></div>
+    </div>
+    <div>
+        <div class="mini"></div>
+        <div class="mini"></div>
+    </div>
+    <div></div>
+    <div></div>
+
+    <script>
+        //改变body中所有div元素的背景颜色
+        $("#btn1").click(function(){
+            $("body div").css("background","red");
+        });
+        //改变body中所有子元素为div的元素的背景颜色
+        $("#btn2").click(function(){
+            $("body>div").css("background","red");
+        });
+        //改变id为one的div元素的下一个div元素的背景颜色
+        $("#btn3").click(function(){
+            $("#one+div").css("background","red");
+        });
+        //改变id为one的div元素的后面所有div元素的背景颜色
+        $("#btn4").click(function(){
+            $("#one~div").css("background","red");
+        });
+    </script>
+</body>
+</html>

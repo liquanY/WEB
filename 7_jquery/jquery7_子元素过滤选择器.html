@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>子元素过滤选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+        }
+        .mini{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background: yellow;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">:nth-child</button>
+    <button id="btn2">:first-child</button>
+    <button id="btn3">:last-child</button>
+    <button id="btn4">:only-child</button>
+    <br/><br/>
+    <div>
+        <div class="mini"></div>
+    </div>
+    <div>
+        <div class="mini"></div>
+        <div class="mini"></div>
+    </div>
+    <div></div>
+    <div></div>
+
+    <script>
+        //:nth-child nth-child是从1开始
+        $("#btn1").click(function(){
+            $("div:nth-child(2)").css("background","green");
+        });
+        //:first-child
+        $("#btn2").click(function(){
+            $("div:first-child").css("background","green");
+        });
+        //:last-child
+        $("#btn3").click(function(){
+            $("div:last-child").css("background","green");
+        });
+        //:only-child
+        $("#btn4").click(function(){
+            $("div:only-child").css("background","green");
+        });
+    </script>
+</body>
+</html>

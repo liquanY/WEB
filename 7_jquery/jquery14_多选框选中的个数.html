@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>多选框选中的个数</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <input type="checkbox" value="1" name="check" checked/>
+    <input type="checkbox" value="2" name="check" />
+    <input type="checkbox" value="3" name="check" checked/>
+    <input type="button" value="测试被选中的个数" id="btn"/>
+
+    <script>
+        $("#btn").click(function(){
+            alert($("input[name=check]:checked").length);
+        });
+    </script>
+</body>
+</html>

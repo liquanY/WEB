@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单对象属性过滤选择器</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <button id="btn1">:enable</button>
+    <button id="btn2">:disable</button>
+    <button id="btn3">:checked</button>
+    <button id="btn4">:selected</button>
+    <br/><br/>
+    <input type="text" value="这是可用元素"/><br/>
+    <input type="text" disabled="disabled" value="这是不可用元素"/><br/><br/>
+    <input type="radio" name="love" checked="checked" value="html"/>HTML
+    <input type="radio" name="love" value="css"/>CSS
+    <input type="radio" name="love" value="javascript"/>JAVASCRIPT
+    <br/><br/>
+    <select id="city">
+        <option value="">-请选择-</option>
+        <option value="bj" selected="selected">-北京-</option>
+        <option value="tj">-天津-</option>
+        <option value="sh">-上海-</option>
+        <option value="nj">-南京-</option>
+        <option value="cq">-重庆-</option>
+    </select>
+
+    <script>
+        $("#btn1").click(function(){
+            $("input:enabled").val("xxx");
+        });
+        $("#btn2").click(function(){
+            $("input:disabled").val("yyy");
+        });
+        $("#btn3").click(function(){
+            console.log($("input[name=love]:checked").val());
+            //DOM
+            var lovers = document.getElementsByName("love");
+            for(var i= 0, len=lovers.length; i<len; i++){
+                var love = lovers[i];
+                if(love.checked){
+                    console.log(love.value);
+                }
+            }
+        });
+        $("#btn4").click(function(){
+            console.log($("#city>option:selected").val());
+        });
+    </script>
+</body>
+</html>

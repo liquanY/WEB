@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>html操作</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <input type="button" value="获取<p>元素的HTML代码"/>
+    <input type="button" value="设置<p>元素的HTML代码"/>
+    <p title="选择你最喜欢的水果"><b>你最喜欢的水果是?</b></p>
+    <ul>
+        <li title="苹果">苹果</li>
+        <li title="橘子">橘子</li>
+        <li title="菠萝">菠萝</li>
+    </ul>
+
+    <script>
+        $("input:eq(0)").click(function(){
+            console.log($("p").html());
+        });
+        $("input:eq(1)").click(function(){
+            $("p").html("<i>被我点击了...</i>");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM对象与jquery对象之间的转换</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <input type="text" id="username" value="请输入你的用户名"/>
+    <script>
+        //DOM对象
+        var username = document.getElementById("username");
+        console.log(username.value);
+        //DOM对象转换成jquery对象
+        var $username = $(username);
+        console.log($username.val());
+
+        //jquery对象
+        var $usernameSub = $("#username");
+        console.log($usernameSub.val());
+        //1.jquery对象是数组对象
+        var username1 = $usernameSub[0];
+        console.log(username1.value);
+        //2.jquery对象提供get(index)方法
+        var username2 = $username.get(0);
+        console.log(username2.value);
+
+
+    </script>
+</body>
+</html>
