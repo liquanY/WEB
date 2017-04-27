@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>加载时间对比</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        var startTime = new Date().getTime();
+        function test1(){
+            var endTime1 = new Date().getTime();
+            console.log("ready:"+(endTime1-startTime)+"毫秒");
+        }
+        function test2(){
+            var endTime2 = new Date().getTime();
+            console.log("onload:"+(endTime2-startTime)+"毫秒");
+        }
+        $(document).ready(function(){
+            test1();
+        });
+        window.onload = function(){
+            test2();
+        }
+    </script>
+</head>
+<body>
+    <img src="query3.jpg" style="width: 300px; height: 200px;"/>
+</body>
+</html>

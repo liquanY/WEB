@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>复制节点</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <p title="选择你最喜欢的水果"><b>你最喜欢的水果是?</b></p>
+    <ul>
+        <li title="苹果">苹果</li>
+        <li title="橘子">橘子</li>
+        <li title="菠萝">菠萝</li>
+    </ul>
+
+    <script>
+        //DOM
+        //点击苹果节点时 复制li元素 到ul上
+        var ping = document.getElementsByTagName("li")[0];
+        ping.onclick = function(){
+            var copy = ping.cloneNode(true);//true表示保留元素里面的内容
+            var ul = document.getElementsByTagName("ul")[0];
+            ul.appendChild(copy);
+        }
+
+        //jquery
+        $("ul>li:last").click(function(){
+            var copy = $(this).clone(true);//指示事件处理函数是否会被复制
+            $("ul").append(copy);
+        });
+    </script>
+</body>
+</html>

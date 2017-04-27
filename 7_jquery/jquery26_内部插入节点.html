@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>内部插入节点</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <ul id="city">
+        <li>北京</li>
+        <li id="tj">天津</li>
+        <li>南京</li>
+    </ul>
+    <ul id="game">
+        <li>反恐</li>
+        <li id="ms">魔兽</li>
+        <li>星际</li>
+    </ul>
+
+    <script>
+        //操作天津节点和魔兽节点
+
+        //1.append后面的节点插入在append前面的节点的后面
+//        $("#ms").append($("#tj"));
+        //2.prepend后面的节点插入在prepend前面的节点的前面
+//        $("#ms").prepend($("#tj"));
+        //3.appendTo前面的节点插入在appendTo后面的节点的后面
+//        $("#ms").appendTo($("#tj"));
+        //4.prependTo前面的节点插入在prependTo后面的节点的前面
+//        $("#ms").prependTo($("#tj"));
+    </script>
+</body>
+</html>

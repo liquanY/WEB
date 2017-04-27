@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>实现购物车客户端计算</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        table{
+            width:600px;
+            text-align:center;
+            border-collapse:collapse;
+        }
+        td,th{
+            border:1px solid black
+        }
+        td[colspan="3"]{
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <table id="data">
+        <thead>
+            <tr>
+                <th>商品名称</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>iPhone6</td>
+                <td>&yen;<span>4488</span></td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>&yen;<span>4488</span></td>
+            </tr>
+            <tr>
+                <td>iPhone6 plus</td>
+                <td>&yen;<span>5288</span></td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>&yen;<span>5288</span></td>
+            </tr>
+            <tr>
+                <td>iPad Air 2</td>
+                <td>&yen;<span>4288</span></td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>&yen;<span>4288</span></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total: </td>
+                <td>&yen;<span>14064</span></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        $("button").click(function(event){
+            var elem = event.target;
+            if($(elem).text() == "+"){
+                var num = parseInt($(elem).prev().text());
+                $(elem).prev().text(num+1);
+            }else{
+                var num = parseInt($(elem).next().text());
+                $(elem).next().text(num-1);
+                if(num == 0){
+                    $(elem).next().text("0");
+                }
+            }
+            //计算小计
+            var  number = parseInt($(elem).parent().children("span").text());
+            var price = parseInt($(elem).parent().prev().children("span").text());
+            $(elem).parent().next().children("span").text(number*price);
+            //计算总计
+            var $spans = $("#data>tbody>tr :last-child>span");//这里要加一个空格 开发经验
+            var total = 0;
+            for(var i=0; i<$spans.length; i++){
+                var span = $spans[i];
+                var num = parseInt($(span).text());
+                total += num;
+            }
+            $("#data>tfoot>tr>td:last>span").text(total);
+        });
+    </script>
+</body>
+</html>

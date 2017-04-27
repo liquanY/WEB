@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>阻止默认行为</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <form action="liquan.html">
+        用户名:<input type="text" id="username"><br>
+        <input type="submit" value="提交" id="sub">
+    </form>
+    <div id="msg"></div>
+
+    <script>
+        //表单提交时 触发submit事件
+        $("form").submit(function(event){
+            //阻止页面默认行为
+//            event.preventDefault();
+            //阻止页面默认行为
+//            return false;
+        });
+    </script>
+</body>
+</html>

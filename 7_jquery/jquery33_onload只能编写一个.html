@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onload只能编写一个</title>
+    <meta charset="UTF-8">
+    <script>
+        function one(){
+            console.info("this is one");
+        }
+        function two(){
+            console.info("this is two");
+        }
+        window.onload = one;
+        window.onload = two;
+    </script>
+</head>
+<body>
+</body>
+</html>

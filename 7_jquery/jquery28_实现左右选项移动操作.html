@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>实现左右选项移动操作</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        select{
+            width:100px;
+            height:85px;
+        }
+        div{
+            display:inline-block;
+            width:50px
+        }
+    </style>
+</head>
+<body>
+    <select id="first" size="5" multiple>
+        <option>Argentina</option>
+        <option>Brazil</option>
+        <option>Canada</option>
+        <option>Chile</option>
+        <option>China</option>
+        <option>Cuba</option>
+        <option>Denmark</option>
+        <option>Egypt</option>
+        <option>France</option>
+        <option>Greece</option>
+        <option>Spain</option>
+    </select>
+    <div>
+        <button id="add">&gt;</button>
+        <button id="add_all">&gt;&gt;</button>
+        <button id="remove">&lt;</button>
+        <button id="remove_all">&lt;&lt;</button>
+    </div>
+    <select id="second" size="5" multiple>
+    </select>
+
+    <script>
+        $("#add").click(function(){
+            $("#first>option:selected").appendTo($("#second"));
+        });
+        $("#add_all").click(function(){
+            $("#first>option").appendTo($("#second"));
+        });
+        $("#remove").click(function(){
+            $("#second>option:selected").appendTo($("#first"));
+        });
+        $("#remove_all").click(function(){
+            $("#second>option").appendTo($("#first"));
+        });
+        //双击事件
+        $("#first").dblclick(function(){
+            $("#first>option:selected").appendTo($("#second"));
+        });
+        $("#second").dblclick(function(){
+            $("#second>option:selected").appendTo($("#first"));
+        });
+    </script>
+</body>
+</html>

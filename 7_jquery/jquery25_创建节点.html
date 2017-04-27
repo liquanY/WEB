@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>创建节点</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <p title="选择你最喜欢的水果"><b>你最喜欢的水果是?</b></p>
+    <ul>
+        <li title="苹果">苹果</li>
+        <li title="橘子">橘子</li>
+        <li title="菠萝">菠萝</li>
+    </ul>
+
+    <script>
+        //创建香蕉元素 添加到ul元素
+        var $li = $("<li></li>");
+        $li.text("香蕉");
+        $li.attr("title","香蕉");
+        $("ul").append($li);
+        //创建榴莲元素 添加到ul元素
+        $("ul").append($("<li title='榴莲'>榴莲</li>"));
+    </script>
+</body>
+</html>

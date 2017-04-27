@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>样式操作</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        .one{
+            width: 200px;
+            height: 140px;
+            margin: 40px;
+            background: red;
+            border: 1px solid #000;
+            float: left;
+            font-size: 17px;
+            font-family: "Times New Roman";
+        }
+        div,span{
+            width: 140px;
+            height: 140px;
+            margin: 20px;
+            background: #9999cc;
+            border: 1px solid #000;
+            float: left;
+            font-size: 17px;
+            font-family: "Times New Roman";
+        }
+        div.mini{
+            width: 30px;
+            height: 30px;
+            background: #cc66ff;
+            border: 1px solid #000;
+            font-size: 12px;
+            font-family: "Times New Roman";
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="采用属性增加样式" id="b1">
+    <input type="button" value="addClass" id="b2">
+    <input type="button" value="removeClsaa" id="b3">
+    <input type="button" value="toggleClass" id="b4">
+    <input type="button" value="hasClass" id="b5">
+    <input type="button" value="css" id="b6">
+    <br>
+    <div id="mover">
+        动画
+    </div>
+    <br>
+    <span class="spanone">span</span>
+
+    <script>
+        $("#b1").click(function(){
+            $("#mover").attr("class","one");
+        });
+        $("#b2").click(function(){
+            $("#mover").addClass("mini");
+        });
+        $("#b3").click(function(){
+            //不传递参数 删除所有样式
+            //需要传递参数 删除指定样式(指定多个样式 之间使用空格隔开)
+            $("#mover").removeClass();
+        });
+        $("#b4").click(function(){
+            //表示在没有样式与指定样式之间切换
+            $("#mover").toggleClass("one");
+        });
+        $("#b5").click(function(){
+            console.log($("#mover").hasClass("one"));
+        });
+        $("#b6").click(function(){
+            $("#mover").css({
+                "background":"green",
+                "width":400
+            });
+        });
+    </script>
+</body>
+</html>
