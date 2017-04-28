@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>动画切换</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div {
+            width : 200px;
+            height : 200px;
+            border : 1px solid black;
+            background : pink;
+            display : none;
+        }
+    </style>
+</head>
+<body>
+    <button>toggle</button>
+    <button>slideToggle</button>
+    <br><br>
+    <div></div>
+
+    <script>
+        $("button:first").click(function(){
+            $("div").toggle(3000);
+        });
+        $("button:last").click(function(){
+            $("div").slideToggle(3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>全局函数插件</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script src="QuanPlus/quanPlus.js"></script>
+</head>
+<body>
+    <button>测试全局函数插件</button>
+
+    <script>
+        $("button").click(function(){
+            alert($.addValue(4,15));
+            alert($.getName("liquan"));
+        })
+    </script>
+</body>
+</html>

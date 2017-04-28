@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>模式对话框</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+</head>
+<body>
+    <div id="dialog" title="Basic dialog">
+        <p>这是一段对话框的文本
+            这是一段对话框的文本
+            这是一段对话框的文本</p>
+    </div>
+
+    <script>
+        $("#dialog").dialog({
+            modal:true
+        });
+    </script>
+</body>
+</html>

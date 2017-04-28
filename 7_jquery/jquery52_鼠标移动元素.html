@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>鼠标移动元素</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <style>
+        body{
+            font-size: 62.5%;
+            font-family: "Trebuchet MS","Arial","Helvatica","Verdana","snas-serif";
+        }
+        #draggable{
+            width: 150px;
+            height: 150px;
+            padding: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="draggable" class="ui-widget-content">
+        <p>Drag me around</p>
+    </div>
+
+    <script>
+        $("#draggable").draggable();
+    </script>
+</body>
+</html>

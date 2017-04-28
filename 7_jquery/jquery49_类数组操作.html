@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>类数组操作</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <input type="text" value="user1">
+    <input type="text" value="user2">
+    <input type="text" value="user3">
+
+    <script>
+        //获取5个input元素 遍历后输出value属性值
+        var $inputs = $("input");
+        for(var i=0; i<$inputs.length;i++){
+            var input = $inputs[i];
+            console.log(input.value);
+        }
+
+        //$().each(callback)方法
+        //  callback-回调函数
+        //      function(index，domEle){}
+        //          index-当前遍历数组或对象的索引值
+        //          domEle-遍历数组或对象得到的每个元素(DOM对象)
+        console.info("李权1");
+        $("input").each(function(index,domEle){
+            console.log(domEle.value);
+        });
+
+        //$.each(obj,callback)方法
+        //  obj-需要遍历的数组或对象
+        //  callback-回调函数
+        //      function(index，domEle){}
+        //          index-当前遍历数组或对象的索引值
+        //          domEle-遍历数组或对象得到的每个元素(DOM对象)
+        console.info("李权2");
+        $.each($("input"),function(index,domEle){
+            console.log(domEle.value);
+            console.log($(domEle).val());
+            console.log(this.value);
+            console.log($(this).val())
+        });
+
+        console.info("李权3");
+        $.each($("input"),function(){
+            console.log($(this).val())
+        });
+
+        console.info("李权4");
+        var arr = [1,2,3];
+        $.each(arr,function(index,liquan){
+            console.log(liquan);
+        });
+
+        console.info("get(index)方法-根据index返回对应的DOM对象");
+        console.log($inputs.get(0).value);
+        console.info("eq(index)方法-根据index返回对应的jQuery对象");
+        console.log($inputs.eq(0).val());
+        console.info("index(obj)方法-根据obj返回对应的索引值 obj可以是DOM对象或者jQuery对象");
+        console.log($inputs.index($inputs[0]));//obj是DOM对象
+        console.log($inputs.index($($inputs[0])));//obj是jQuery对象
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>滑动效果</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div {
+            width : 200px;
+            height : 200px;
+            border : 1px solid black;
+            background : pink;
+            display : none;
+        }
+    </style>
+</head>
+<body>
+    <button>slideDown</button>
+    <button>slideUp</button>
+    <br><br>
+    <div></div>
+
+    <script>
+        $("button:first").click(function(){
+            $("div").slideDown(3000);
+        });
+        $("button:last").click(function(){
+            $("div").slideUp(3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>鼠标移动元素选项</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <style>
+        body{
+            font-size: 62.5%;
+            font-family: "Trebuchet MS","Arial","Helvatica","Verdana","snas-serif";
+        }
+        .draggable{
+            width: 90px;
+            height: 90px;
+            padding: 0.5em;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+        #containment-wrapper{
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+            clear: both;
+            padding: 0.5em;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="draggable1" class="draggable ui-widget-content">
+        <p>第一个</p>
+    </div>
+    <div id="draggable2" class="draggable ui-widget-content">
+        <p>第二个</p>
+    </div>
+    <div id="draggable4" class="draggable ui-widget-content">
+        <p>第四个</p>
+    </div>
+    <div id="draggable5" class="draggable ui-widget-content">
+        <p>第五个</p>
+    </div>
+    <div id="draggable6" class="draggable ui-widget-content">
+        <p>第六个</p>
+    </div>
+    <div id="draggable7" class="draggable ui-widget-content">
+        <p>第七个</p>
+    </div>
+    <div id="draggable8" class="draggable ui-widget-content">
+        <p>第八个</p>
+    </div>
+    <div id="draggable9" class="draggable ui-widget-content">
+        <p>第九个</p>
+    </div>
+    <div id="containment-wrapper">
+        <div id="draggable3" class="draggable ui-widget-content">
+            <p>第三个</p>
+        </div>
+    </div>
+
+    <script>
+        /*
+        * draggable(options)
+        * option-格式为{key:value}
+        * 选项
+        *   axis-设置当前元素只能向x轴或y轴拖动
+        *   containment-设置当前元素在指定区域中拖动
+        *       "parent"-指当前元素的父元素
+        *       "documnet"或"window"-指当前页面
+        *       数组
+        *           格式-[x1,y1,x2,y2]
+        *       选择器
+        *   cursor-设置拖动当前元素时 鼠标的样式
+        *   revert-当拖动结束时 当前元素是否回到初始位置
+        *   snap-设置拖动的当前元素是否吸附到指定元素(可以是选择器)
+        *   snapMode-设置吸附的方式"inner" "outer" "both"
+        *   handle和helper-实现复制当前元素 拖动的是复制后的元素
+        *   grid-设置当前元素每次拖动的距离[50,50]
+        * */
+        $("#draggable1").draggable({
+            axis:"y"
+        });
+        $("#draggable2").draggable({
+            axis:"x"
+        });
+        $("#draggable3").draggable({
+            containment:"parent"
+        });
+        $("#draggable4").draggable({
+            cursor:"pointer"
+        });
+        $("#draggable5").draggable({
+            revert:true
+        });
+        $("#draggable6").draggable({
+            snap:true
+        });
+        $("#draggable7").draggable({
+            snap:"#containment-wrapper",
+            snapMode:"inner"
+        });
+        $("#draggable8").draggable({
+            handle:"p",
+            helper:"clone"
+        });
+        $("#draggable9").draggable({
+            grid:[50,50]
+        });
+    </script>
+</body>
+</html>

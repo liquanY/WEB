@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>自定义动画</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        body{
+            padding: 60px;
+        }
+        #panel{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #0050D0;
+            background: #96E555;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="panel"></div>
+
+    <script>
+        //当鼠标点击div时 div向右移动200px 再向下200px 淡出
+        $("#panel").click(function(){
+            $("#panel").animate({
+                left:200
+            },{
+                duration:3000
+            }).animate({
+                top:200
+            },{
+                duration:3000
+            }).fadeOut(3000);
+        })
+    </script>
+</body>
+</html>

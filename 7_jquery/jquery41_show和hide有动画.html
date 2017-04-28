@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>show和hide有动画</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <style>
+        div {
+            width : 200px;
+            height : 200px;
+            border : 1px solid black;
+            background : pink;
+            display : none;
+        }
+    </style>
+</head>
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <br><br>
+    <div></div>
+
+    <script>
+        $("button:first").click(function(){
+            $("div").show("slow",function(){
+                alert("xxx");
+            });
+        });
+        $("button:last").click(function(){
+            $("div").hide(3000,function(){
+                alert("yyy");
+            });
+        });
+    </script>
+</body>
+</html>

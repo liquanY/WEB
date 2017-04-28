@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>动态缩放相册中的图片</title>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <style>
+        body{
+            font-size: 13px;
+        }
+        .p_Lst{
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 98px;
+            padding: 8px;
+            border: 1px solid #666;
+        }
+        .p_Img{
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="p_Lst">
+        <div class="p_Img">
+            <img width="500" height="300" src="query3.jpg">
+        </div>
+    </div>
+
+    <script>
+        $(".p_Lst").resizable({
+            alsoResize:".p_Img",
+            maxWidth:510,
+            maxHeight:320,
+            minWidth:90,
+            minHeight:98
+        });
+        $(".p_Img").resizable();
+    </script>
+</body>
+</html>
