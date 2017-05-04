@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>与Worker双向通信</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <input type="text" id="data"/>
+    <input type="button" id="btn" value="发送"/>
+    <br/>
+    <div id="showme"></div>
+
+    <script>
+        //获取div
+        var showme = document.getElementById("showme");
+        //定义Worker对象
+        var worker;
+
+        //检测是否支持Worker
+        if(typeof(Worker)!=="undefined"){
+            worker = new Worker("worker2.js");
+            //向worker文件传递消息
+            worker.postMessage("init");
+            worker.onmessage = myMessage;
+        }else{
+            showme.innerHTML = "对不起，你的浏览器不支持Web Worker."
+        }
+
+        //定义处理函数
+        function myMessage(event){
+            showme.innerHTML += event.data+"<br>";
+        }
+
+        var data = document.getElementById("data");
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var value = data.value;
+            worker.postMessage(value);
+        }
+    </script>
+</body>
+</html>

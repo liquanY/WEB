@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web存储API的案例</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Web版本简单记事本</h1>
+    <textarea id="data" cols="30" rows="10"></textarea>
+    <br/><br/>
+    <input type="button" id="save" value="保存"/>
+    <input type="button" id="read" value="读取"/>
+    <input type="button" id="update" value="修改"/>
+    <input type="button" id="del" value="删除"/>
+    <br/><br/>
+    <input type="hidden" id="mykey"/>
+    <div id="datas"></div>
+
+    <script>
+        /*
+        保存 - 用户输入 点击进行保存（不能为空）
+        读取 - 将存储的数据读取 以table格式显示出来
+        修改 - 选择表格中的某一条数据进行修改
+        删除 - 选择表格中的某一条数据进行删除
+        * */
+
+        var mykey = document.getElementById("mykey");
+        //保存功能
+        var save = document.getElementById("save");
+        var data = document.getElementById("data");
+        save.onclick = function(){
+            if(data.value==""||data.value==null){
+                alert("请先输入内容");
+            }else{
+                var key = mykey.value;
+                if(key==""||key==null){
+                    key = new Date().getTime();
+                }
+                localStorage.setItem(key,data.value);
+                data.value = "";
+                mykey.value = "";
+                alert("输入的内容已保存");
+            }
+        };
+        //读取功能
+        var read = document.getElementById("read");
+        var datas = document.getElementById("datas");
+        read.onclick = myRead;
+        function myRead(){
+            var table = "<table border='1'><tr><th></th><th>key</th><th>value</th></tr>";
+            for(var i=0; i<localStorage.length; i++){
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                table += "<tr><td><input type='radio' name='txts' value='"+key+"'/></td><td>"+key+"</td><td>"+value+"</td></tr>";
+            }
+            table += "</table>";
+            datas.innerHTML = table;
+        }
+        //修改功能
+        var update = document.getElementById("update");
+        update.onclick = function(){
+            var radios = document.getElementsByName("txts");
+            for(var i=0; i<radios.length; i++){
+                var radio = radios[i];
+                if(radio.checked){
+                    var key = radio.value;
+                    mykey.value = key;
+                    break;
+                }
+            }
+            var value = localStorage.getItem(key);
+            data.value = value;
+        };
+        //删除功能
+        var del = document.getElementById("del");
+        del.onclick = function(){
+            var radios = document.getElementsByName("txts");
+            for(var i=0; i<radios.length; i++){
+                var radio = radios[i];
+                if(radio.checked){
+                    var key = radio.value;
+                    break;
+                }
+            }
+            localStorage.removeItem(key);
+            myRead();
+        }
+    </script>
+</body>
+</html>

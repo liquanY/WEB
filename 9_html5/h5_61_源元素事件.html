@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>源元素事件</title>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="img" width="200" src="p1.png"/>
+    </div>
+    <script>
+        //获取源元素
+        var img = document.getElementById("img");
+        //为源元素绑定事件
+        img.addEventListener("dragstart",myDragstart);
+        img.addEventListener("drag",myDrag);
+        img.addEventListener("dragend",myDragend);
+        //定义事件的处理函数
+        function myDragstart(event){
+            console.log("开始拖放："+event.pageX+","+event.pageY);
+        }
+        function myDrag(event){
+            console.log("正在拖放："+event.pageX+","+event.pageY);
+        }
+        function myDragend(event){
+            console.log("结束拖放："+event.pageX+","+event.pageY);
+        }
+    </script>
+</body>
+</html>

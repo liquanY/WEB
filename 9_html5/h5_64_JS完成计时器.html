@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS完成计时器</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <input type="button" id="start" value="开始"/>
+    <input type="button" id="stop" value="结束"/>
+    <div id="showtime"></div>
+
+    <script>
+        //获取开始和结束按钮
+        var start = document.getElementById("start");
+        var stop = document.getElementById("stop");
+        //获取div元素
+        var showtime = document.getElementById("showtime");
+        //定义用于计数的变量
+        var num = 0;
+        //为按钮绑定事件
+        start.onclick = startAdd;
+        function startAdd(){
+            //开始计数
+            showtime.innerHTML = num;
+            num++;
+            t = setTimeout(startAdd,1000);
+        }
+        stop.onclick = function(){
+            //停止计数
+            clearTimeout(t);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地图的右键菜单展示</title>
+    <meta charset="UTF-8">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=BBrCE41aYUZBNQuAtXwktBVMYq6C5lwy"></script>
+</head>
+<body>
+    <div id="allmap" style="width:500px; height:500px"></div>
+    <script>
+        var map = new BMap.Map("allmap");
+        map.centerAndZoom("北京");
+
+        //添加鼠标右键菜单
+        var menu = new BMap.ContextMenu();
+        var txtMenuItem = [
+            {
+                text:'放大',
+                callback:function(){map.zoomIn()}
+            },
+            {
+                text:'缩小',
+                callback:function(){map.zoomOut()}
+            }
+        ];
+        for(var i=0; i<txtMenuItem.length; i++){
+            menu.addItem(new BMap.MenuItem(txtMenuItem[i].text,txtMenuItem[i].callback,100));
+        }
+        map.addContextMenu(menu);
+    </script>
+</body>
+</html>

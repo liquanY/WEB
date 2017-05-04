@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Worker完成计时器</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <input type="button" id="start" value="开始"/>
+    <input type="button" id="stop" value="结束"/>
+    <div id="showtime"></div>
+
+    <script>
+        //获取开始和结束按钮
+        var start = document.getElementById("start");
+        var stop = document.getElementById("stop");
+        //获取div元素
+        var showtime = document.getElementById("showtime");
+        //定义worker
+        var worker;
+
+        //为按钮绑定事件
+        start.onclick = function(){
+            //检测浏览器是否支持worker
+            if(typeof(Worker)!=="undefined"){
+                //创建Worker对象
+                worker = new Worker("worker1.js");
+                //绑定onmessage事件
+                worker.onmessage = function(event){
+                    showtime.innerHTML = event.data;
+                }
+            }else{//不支持
+                showtime.innerHTML = "<h3>该浏览器不支持Web Worker.</h3>"
+            }
+        };
+        stop.onclick = function(){
+            //终止于worker的通信
+            worker.terminate();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>目标元素事件</title>
+    <meta charset="UTF-8">
+    <style>
+        #d1,#d2{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            float: left;
+            padding: 10px;
+        }
+        #d2{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <!--作为拖放的源元素-->
+    <div id="d1">
+        <img id="img" width="200" src="p1.png"/>
+    </div>
+    <!--作为拖放的目标元素-->
+    <div id="d2"></div>
+    <script>
+        //获取目标元素
+        var d2 = document.getElementById("d2");
+        //为目标元素绑定事件
+        d2.addEventListener("dragenter",myDragenter);
+        d2.addEventListener("dragover",myDragover);
+        d2.addEventListener("drop",myDrop);
+        d2.addEventListener("dragleave",myDragleave);
+        //定义事件的处理函数
+        function myDragenter(event){
+            console.log("大爷来了");
+        }
+        function myDragover(event){
+            //该方法用于阻止默认行为
+            event.preventDefault();
+            console.log("大爷又来了");
+        }
+        function myDrop(event){
+            console.log("大爷别走了");
+        }
+        function myDragleave(event){
+            console.log("大爷下次再来啊");
+        }
+    </script>
+</body>
+</html>

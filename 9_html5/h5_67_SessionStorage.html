@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SessionStorage</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        //获取session Storage
+        var ss = window.sessionStorage;
+        console.log(ss);
+
+        //setItem 能新增 能修改
+        var key = new Date().getTime();//时间戳 精确到毫秒
+        sessionStorage.setItem(key,"liquan");
+
+        //getItem
+        sessionStorage.setItem("1","quange");
+        var value = sessionStorage.getItem("1");
+        document.body.innerHTML = value;
+
+        //removeItem
+        sessionStorage.removeItem("1");
+
+        //length属性
+        console.log(sessionStorage.length);
+
+        //key(index)
+        for(var i=0; i<sessionStorage.length; i++){
+            var key = sessionStorage.key(i);
+            console.log(key);
+        }
+
+        //clear
+        sessionStorage.clear();
+
+    </script>
+</body>
+</html>

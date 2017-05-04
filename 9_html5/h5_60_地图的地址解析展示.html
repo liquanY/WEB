@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地图的地址解析展示</title>
+    <meta charset="UTF-8">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=BBrCE41aYUZBNQuAtXwktBVMYq6C5lwy"></script>
+</head>
+<body>
+    <div id="allmap" style="width:500px; height:500px"></div>
+    <script>
+        var map = new BMap.Map("allmap");
+
+        //地址解析
+        var myGeo = new BMap.Geocoder();
+        myGeo.getPoint("北京市东城区东直门南大街12号", function(point){
+            if (point) {
+                console.log(point);
+                map.centerAndZoom(point, 16);
+                map.addOverlay(new BMap.Marker(point));
+            }else{
+                alert("您选择地址没有解析到结果!");
+            }
+        }, "北京市");
+
+    </script>
+</body>
+</html>

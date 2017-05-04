@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地图的覆盖物展示</title>
+    <meta charset="UTF-8">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=BBrCE41aYUZBNQuAtXwktBVMYq6C5lwy"></script>
+</head>
+<body>
+    <div id="allmap" style="width:500px; height:500px"></div>
+    <script>
+        var map = new BMap.Map("allmap");
+        map.centerAndZoom("北京",14);
+
+        //添加标注
+        var point = new BMap.Point(116.404, 39.915);
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+
+        //添加信息窗口
+        var opts = {
+            width : 200,
+            height: 100,
+            title : "北京天安门"
+        };
+        var infoWindow = new BMap.InfoWindow("地址:北京市长安街0号", opts);
+        marker.addEventListener("click", function(){
+            map.openInfoWindow(infoWindow,point);
+        });
+    </script>
+</body>
+</html>
