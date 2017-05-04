@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas绘制图片</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="900px" height="600px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //通过JavaScript代码读取图片
+        var img = new Image();
+        img.src = "p1.png";
+        //通过Canvas的drawImage()方法进行绘制
+        img.onload = function(){
+            context.drawImage(img,0,0,240,170);
+            //绘制矩形
+            context.fillRect(10,10,50,50);
+        }
+    </script>
+</body>
+</html>

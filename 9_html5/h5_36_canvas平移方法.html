@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas平移方法</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="900px" height="600px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        context.fillRect(0,0,100,100);
+
+        context.translate(100,100);
+        context.fillRect(0,0,100,100);
+
+        context.translate(100,100);
+        context.fillRect(0,0,100,100);
+    </script>
+</body>
+</html>

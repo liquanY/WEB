@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG绘制高斯模糊</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <svg width="500px" height="500px">
+        <defs>
+            <filter id="myfilter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3"></feGaussianBlur>
+            </filter>
+        </defs>
+        <rect x="10" y="100" width="100" height="100" filter="url(#myfilter)" fill="green"></rect>
+        <rect x="120" y="100" width="100" height="100" fill="green"></rect>
+    </svg>
+</body>
+</html>

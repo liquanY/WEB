@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas旋转方法</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="900px" height="600px" style="background: pink"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //旋转画布
+        context.rotate(30*Math.PI/180);
+        context.fillRect(canvas.width/2-50,canvas.height/2-50,100,100);
+
+    </script>
+</body>
+</html>

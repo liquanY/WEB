@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG绘制线性渐变</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <svg width="500px" height="500px">
+        <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="red"></stop>
+                <stop offset="50%" stop-color="yellow"></stop>
+                <stop offset="100%" stop-color="blue"></stop>
+            </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="500" height="500" fill="url(#grad)"></rect>
+    </svg>
+</body>
+</html>

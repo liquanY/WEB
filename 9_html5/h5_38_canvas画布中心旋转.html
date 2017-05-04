@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas画布中心旋转</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="500px" style="background: pink"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //将画布的左上角 平移到画布的中心点
+        context.translate(canvas.width/2,canvas.height/2);
+        function myRotate(){
+            context.clearRect(-canvas.width/2,-canvas.height/2,
+                    canvas.width,canvas.height);
+            context.rotate(10*Math.PI/180);
+            context.fillRect(-50,-50,100,100);
+        }
+
+        setInterval(myRotate,1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chartjs库绘制饼状图</title>
+    <meta charset="UTF-8">
+    <script src="Chart.js"></script>
+</head>
+<body>
+    <canvas id="canvas" width="300px" height="300px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var chart = new Chart(context);
+        Chart.defaults.global.animation = true;
+        var data = [
+            {
+                value : 50,
+                color : "pink",
+                highlight : "red",
+                label : "Pink"
+            },
+            {
+                value : 350,
+                color : "green",
+                highlight : "lightgreen",
+                label : "Green"
+            },
+            {
+                value : 450,
+                color : "blue",
+                highlight : "lightblue",
+                label : "Blue"
+            }
+        ];
+        chart.Pie(data);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas设置线条</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="600px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //设置线的宽度
+        context.lineWidth = 10;
+        //设置线的端点形状
+        context.lineCap = "round";
+        //设置线的焦点形状
+        context.lineJoin = "miter";
+        context.miterLimit = 50;
+
+        context.beginPath();
+        context.moveTo(100,10);
+        context.lineTo(150,300);
+        context.lineTo(130,50);
+        context.stroke();
+
+    </script>
+</body>
+</html>

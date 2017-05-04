@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas缩放方法</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="800px" height="500px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //绘制实心矩形
+        context.fillStyle = "green";
+        context.fillRect(20,20,100,100);
+
+        //绘制实心矩形(放大)
+        context.scale(1.5,1.5);
+        context.fillRect(180,20,100,100);
+
+        //绘制实心矩形(缩小)
+        context.scale(0.5,0.5);
+        context.fillRect(780,20,100,100);
+    </script>
+</body>
+</html>

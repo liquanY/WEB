@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twojs将绘制图形进行分组</title>
+    <meta charset="UTF-8">
+    <script src="two.js"></script>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        var div = document.getElementById("show");
+        var params = {
+            width : 500,
+            height : 500
+        };
+        var two = new Two(params);
+        two.appendTo(div);
+
+        //设置图形
+        var circle = two.makeCircle(72,100,50);
+        var rect = two.makeRectangle(213,100,100,100);
+        //进行分组
+        var group = two.makeGroup(circle,rect);
+        //针对这一组设置样式
+        group.fill = "#FF8000";
+        group.stroke = "orangered";
+        group.linewidth = 5;
+        //设置矩形样式
+        rect.fill = "rgba(0,200,255,0.75)";
+        rect.stroke = "#1C75BC";
+
+        //绘制图形
+        two.update();
+    </script>
+</body>
+</html>

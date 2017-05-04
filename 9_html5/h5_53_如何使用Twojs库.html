@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>如何使用Twojs库</title>
+    <meta charset="UTF-8">
+    <script src="two.js"></script>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <script>
+        var div = document.getElementById("mydiv");
+        var params = {
+            width : 500,
+            height : 500
+        };
+        var two = new Two(params);
+        two.appendTo(div);
+    </script>
+</body>
+</html>

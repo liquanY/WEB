@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG练习</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <svg width="500px" height="500px">
+        <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="red"></stop>
+                <stop offset="100%" stop-color="blue"></stop>
+            </linearGradient>
+            <filter id="myfilter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5"></feGaussianBlur>
+            </filter>
+        </defs>
+        <rect x="100" y="100" width="100" height="100" fill="url(#grad)" filter="url(#myfilter)"></rect>
+    </svg>
+</body>
+</html>

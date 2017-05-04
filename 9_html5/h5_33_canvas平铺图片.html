@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas平铺图片</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="900px" height="600px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //通过JavaScript代码读取图片
+        var img = new Image();
+        img.src = "p1.png";
+        //平铺图片
+        img.onload = function(){
+            var ptn = context.createPattern(img,"repeat");
+            context.fillStyle = ptn;
+            context.fillRect(0,0,canvas.width,canvas.height);
+        }
+    </script>
+</body>
+</html>

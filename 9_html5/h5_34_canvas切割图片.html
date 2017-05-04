@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas切割图片</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="800px" height="600px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //1.绘制图片
+        var img = new Image();
+        img.src = "p1.png";
+        img.onload = function(){
+            context.drawImage(img,0,0,240,170);
+        };
+        //2.切割图片
+        context.beginPath();
+        context.rect(22,50,40,45);
+        context.closePath();
+        context.clip();
+
+    </script>
+</body>
+</html>
