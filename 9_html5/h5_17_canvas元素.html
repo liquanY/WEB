@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas元素</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!--默认300px*150px-->
+    <canvas id="canvas1" style="background: blue;"></canvas>
+    <canvas id="canvas2" style="background: pink" width="800px" height="200px"></canvas>
+    <script>
+        //1.获取canvas元素
+        var canvas1 = document.getElementById("canvas1");
+        var canvas2 = document.getElementById("canvas2");
+        //2.创建画布对象
+        var context1 = canvas1.getContext("2d");
+        var context2 = canvas2.getContext("2d");
+        //3.利用画布对象绘制图形
+        context1.fillRect(10,10,100,100);
+        context2.fillRect(10,10,100,100);
+    </script>
+</body>
+</html>

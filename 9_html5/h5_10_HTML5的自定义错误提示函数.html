@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5的自定义错误提示函数</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form>
+        <input type="text" id="i" required>
+        <input type="submit" onclick="formValidate()">
+    </form>
+    <script>
+        function formValidate(){
+            var i = document.getElementById("i");
+            if(i.validity.valueMissing){
+                i.setCustomValidity("元素不能为空");
+            }else if(i.validity.customError){
+                i.setCustomValidity("");
+            }
+        }
+    </script>
+</body>
+</html>

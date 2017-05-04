@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas设置图形样式</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="300"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        context.fillStyle = "yellow";
+        context.fillRect(10,10,100,100);
+        context.fillStyle = "green";
+        context.fillRect(10,120,100,100);
+
+        context.strokeStyle = "red";
+        context.strokeRect(120,10,100,100);
+    </script>
+</body>
+</html>

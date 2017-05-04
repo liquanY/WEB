@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas设置阴影</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="800px" height="500px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        //设置填充颜色
+        context.fillStyle = "green";
+        //设置阴影效果
+        context.shadowColor = "red";
+        context.shadowOffsetX = 10;
+        context.shadowOffsetY = 10;
+        context.shadowBlur = 5;
+        //绘制实心矩形
+        context.fillRect(50,50,100,100);
+        //设置字体
+        context.font = "bold 48px 微软雅黑";
+        //绘制实心文字
+        context.fillText("李权",200,200);
+    </script>
+</body>
+</html>

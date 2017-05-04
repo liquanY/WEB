@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas射线渐变</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="300px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        //1.设置射线渐变
+        var grad = context.createRadialGradient(canvas.width/2,0,50,canvas.width/2,canvas.height,100);
+        //2.设置渐变的颜色
+        grad.addColorStop(0,"red");
+        grad.addColorStop(0.5,"blue");
+        grad.addColorStop(1,"green");
+        //3.设置填充样式为射线渐变
+        context.fillStyle = grad;
+        //4.绘制矩形
+        context.fillRect(0,0,canvas.width,canvas.height);
+    </script>
+</body>
+</html>

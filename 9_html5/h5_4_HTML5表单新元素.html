@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5表单新元素</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <fieldset>
+        <legend>HTML5新元素</legend>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <select>
+                            <option>请选择</option>
+                            <option>北京市</option>
+                            <option>天津市</option>
+                            <option>南京市</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <datalist id="cities">
+                            <option>请选择</option>
+                            <option>北京市</option>
+                            <option>天津市</option>
+                            <option>南京市</option>
+                        </datalist>
+                        <input type="text" list="cities">
+                    </td>
+                </tr>
+                <tr><td>
+                    <progress id="progress" max="100" value="0"/>
+                </td></tr>
+                <tr><td>
+                    <meter id="meter" min="0" max="100" value="0" high="90" low="10"/>
+                </td></tr>
+            </table>
+        </form>
+    </fieldset>
+    <script>
+        (function fn(){
+            var progress = document.getElementById("progress");
+            var max = progress.max;
+            var value = progress.value;
+            if(value < max){
+                value++;
+                progress.value = value;
+                setTimeout(fn,100);
+            }
+        })();
+        (function fn2(){
+            var meter = document.getElementById("meter");
+            var max = meter.max;
+            var value = meter.value;
+            if(value < max){
+                value++;
+                meter.value = value;
+                setTimeout(fn2,100);
+            }
+        })();
+    </script>
+</body>
+</html>

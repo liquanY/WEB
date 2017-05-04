@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>video元素的方法和属性</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <video id="mmedia" src="oceans-clip.mp4" width="150" height="80" style="background: black"></video><br>
+    <input type="button" id="btn" value="播放">
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click",myClick);
+        var mmedia = document.getElementById("mmedia");
+        function myClick(){
+            if(mmedia.paused){
+                mmedia.play();
+                btn.value = "暂停";
+            }else{
+                mmedia.pause();
+                btn.value = "播放";
+            }
+        }
+    </script>
+</body>
+</html>

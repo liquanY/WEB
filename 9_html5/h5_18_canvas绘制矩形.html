@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas绘制矩形</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="300"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        context.fillRect(10,10,100,100);
+        context.strokeRect(120,10,100,100);
+        context.fillRect(240,10,100,100);
+        context.clearRect(250,20,80,80);
+    </script>
+</body>
+</html>

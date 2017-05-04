@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas绘制折线练习</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="400px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(100,10);
+        context.lineTo(100,350);
+        context.lineTo(400,350);
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(90,20);
+        context.lineTo(100,10);
+        context.lineTo(110,20);
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(390,340);
+        context.lineTo(400,350);
+        context.lineTo(390,360);
+        context.stroke();
+
+        for(var i=1; i<10; i++){
+            context.beginPath();
+            context.moveTo(100+30*i,350);
+            context.lineTo(100+30*i,360);
+            context.stroke();
+        }
+        for(var i=1; i<10; i++){
+            context.beginPath();
+            context.moveTo(100,10+34*i);
+            context.lineTo(90,10+34*i);
+            context.stroke();
+        }
+
+        context.font = "18px 微软雅黑";
+        context.textAlign = "right";
+        context.textBaseline = "top";
+        context.fillText("0",100,350);
+    </script>
+</body>
+</html>

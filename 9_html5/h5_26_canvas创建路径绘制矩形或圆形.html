@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas创建路径绘制矩形或圆形</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="300px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //1.标识创建路径
+        context.beginPath();
+        //2.设置矩形
+        context.rect(10,10,100,100);
+        //3.标识结束
+        context.closePath();
+        //4.绘制实心
+        context.fill();
+
+        //绘制空心矩形
+        context.beginPath();
+        context.rect(10,120,100,100);
+        context.closePath();
+        context.stroke();
+
+        //绘制实心圆形
+        context.beginPath();
+        context.arc(170,55,50,0,Math.PI*2);
+        context.closePath();
+        context.fill();
+
+        //绘制空心圆
+        context.beginPath();
+        context.arc(170,170,50,0,Math.PI*2);
+        context.closePath();
+        context.stroke();
+
+        //绘制实心弧形
+        context.beginPath();
+        context.arc(280,60,50,0,Math.PI*3/2,false);
+        context.closePath();
+        context.fill();
+
+        //绘制空心弧形
+        context.beginPath();
+        context.arc(280,170,50,0,Math.PI*3/2,false);
+        context.closePath();//绘制空心弧形时 不用此方法
+        context.stroke();
+    </script>
+</body>
+</html>

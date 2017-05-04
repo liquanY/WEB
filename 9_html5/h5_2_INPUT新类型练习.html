@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INPUT新类型练习</title>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="showcolor"></div>
+    <br>
+    红色:<input type="range" id="r" min="0" max="255" value="0"><br>
+    绿色:<input type="range" id="g" min="0" max="255" value="0"><br>
+    蓝色:<input type="range" id="b" min="0" max="255" value="0"><br>
+    <script>
+        /*
+        * 需求：
+        *   三个滑动条表示三原色 每个颜色范围0~255
+        *   设置到div的背景颜色中
+        * */
+        var inputs = document.getElementsByTagName("input");
+        for(var i=0; i<inputs.length; i++){
+            var input = inputs[i];
+            input.onchange = mychange;
+        }
+        var arr = [];//用于存储三个颜色值
+        function mychange(){
+            arr[0] = inputs[0].value;
+            arr[1] = inputs[1].value;
+            arr[2] = inputs[2].value;
+            var div = document.getElementById("showcolor");
+            div.style.background = "rgb("+arr[0]+","+arr[1]+","+arr[2]+")";
+        }
+        mychange();
+    </script>
+</body>
+</html>

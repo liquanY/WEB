@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5的有效状态</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <fieldset>
+        <legend>HTML5的有效状态</legend>
+        <form>
+            <table>
+                <tr>
+                    <td><input type="text" id="i1" required pattern="^[0-9]+$" maxlength="5"></td>
+                </tr>
+                <tr>
+                    <td><input type="email" id="e"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="n" min="0" max="10" step="2"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" onclick="formValidate()"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+    <script>
+        function formValidate(){
+            var input1 = document.getElementById("i1");
+            console.log(input1.validity);
+            if(input1.validity.valid){
+                console.log("input1可以提交");
+            }else if(input1.validity.valueMissing){
+                console.log("input1元素为空");
+            }else if(input1.validity.patternMismatch){
+                console.log("正则不匹配");
+            }else if(input1.validity.tooLong){
+                console.log("输入内容过长");
+            }
+
+            var e = document.getElementById("e");
+            console.log(e.validity);
+            if(e.validity.valid){
+                console.log("e可以提交");
+            }else if(e.validity.typeMismatch){
+                console.log("email输入有误");
+            }
+
+            var n = document.getElementById("n");
+            console.log(n.validity);
+            if(n.validity.valid){
+                console.log("n可以提交");
+            }else if(n.validity.rangeUnderflow){
+                console.log("值过小");
+            }else if(n.validity.stepMismatch){
+                console.log("step不对");
+            }
+        }
+    </script>
+</body>
+</html>

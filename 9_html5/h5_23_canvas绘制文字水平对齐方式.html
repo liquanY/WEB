@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas绘制文字水平对齐方式</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="400px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        //绘制一条基准线
+        context.beginPath();
+        context.moveTo(100,0);
+        context.lineTo(100,400);
+        context.stroke();
+        //设置字体
+        context.font = "bold 48px 微软雅黑";
+        //设置填充样式
+        context.fillStyle = "blue";
+        //设置水平对齐
+        context.textAlign = "left";
+        //绘制实心文字
+        context.fillText("李权",100,100);
+
+        context.textAlign = "center";
+        context.fillText("李权",100,150);
+        context.textAlign = "right";
+        context.fillText("李权",100,200);
+
+    </script>
+</body>
+</html>

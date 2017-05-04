@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>video元素的事件</title>
+    <meta charset="UTF-8">
+    <style>
+        #adv{
+            position: relative;
+            top: -230px;
+            left: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <video id="mmedia" src="oceans-clip.mp4" controls></video>
+    <div id="adv">
+        <img src="p1.png" width="250px">
+    </div>
+    <script>
+        var mmedia = document.getElementById("mmedia");
+        mmedia.addEventListener("play",myPlay);
+        mmedia.addEventListener("pause",myPause);
+        var adv = document.getElementById("adv");
+        function myPlay(){
+            console.log("视频已播放");
+            adv.style.display = "none";
+        }
+        function myPause() {
+            console.log("视频已暂停");
+            adv.style.display = "block";
+        }
+        //当全屏播放时 图片是无法显示的 底层机制问题
+    </script>
+</body>
+</html>

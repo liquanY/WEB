@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas绘制文字垂直对齐方式</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <canvas id="canvas" width="900px" height="300px"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        //绘制一条基准线
+        context.beginPath();
+        context.moveTo(50,150);
+        context.lineTo(850,150);
+        context.stroke();
+        //设置字体
+        context.font = "bold 48px 微软雅黑";
+        //设置描边样式
+        context.strokeStyle = "red";
+        //设置垂直对齐
+        context.textBaseline = "top";
+        //绘制空心文字
+        context.strokeText("李权",50,150);
+
+        context.textBaseline = "middle";
+        context.strokeText("李权",150,150);
+        context.textBaseline = "bottom";
+        context.strokeText("李权",250,150);
+
+        context.textBaseline = "hanging";
+        context.strokeText("李权",350,150);
+
+        context.textBaseline = "alphabetic";
+        context.strokeText("李权",450,150);
+    </script>
+</body>
+</html>
